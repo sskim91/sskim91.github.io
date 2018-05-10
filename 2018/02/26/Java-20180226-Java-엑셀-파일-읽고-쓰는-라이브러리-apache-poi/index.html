@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Java 엑셀 파일 읽고 쓰는 라이브러리 Apache POI | Amagrammer</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Java,ApachePOI" />
+    
+    <meta name="description" content="앞으로 자바에서 쓰이는 라이브러리들을 알아가는 대로 예제를 보면서 작성할 예정이다. 그 첫번째로 apache 오픈소스 라이브러리인 apache POI 이다.">
+<meta name="keywords" content="Java,ApachePOI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 엑셀 파일 읽고 쓰는 라이브러리 Apache POI">
+<meta property="og:url" content="https://sskim91.github.io/2018/02/26/Java-20180226-Java-엑셀-파일-읽고-쓰는-라이브러리-apache-poi/index.html">
+<meta property="og:site_name" content="Amagrammer">
+<meta property="og:description" content="앞으로 자바에서 쓰이는 라이브러리들을 알아가는 대로 예제를 보면서 작성할 예정이다. 그 첫번째로 apache 오픈소스 라이브러리인 apache POI 이다.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://sskim91.github.io/images/thumbnail/apache-poi-logo.jpg">
+<meta property="og:updated_time" content="2018-05-10T01:22:29.120Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 엑셀 파일 읽고 쓰는 라이브러리 Apache POI">
+<meta name="twitter:description" content="앞으로 자바에서 쓰이는 라이브러리들을 알아가는 대로 예제를 보면서 작성할 예정이다. 그 첫번째로 apache 오픈소스 라이브러리인 apache POI 이다.">
+<meta name="twitter:image" content="https://sskim91.github.io/images/thumbnail/apache-poi-logo.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">아마그래머</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Programmers/">Programmers</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/JavaScript/">JavaScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/HTML/">HTML</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/라즈베리파이/">라즈베리파이</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/">정리</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/IDE/">IDE</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/JS-Library/">JS Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/Java-Library/">Java Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQuery/">jQuery</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQueryUI/">jQueryUI</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                
+                
+                <section id="main">
+                    <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/정리/">정리</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/정리/Java-Library/">Java Library</a>
+    </h1>
+</div>
+                    <div class="main-body-content">
+                        <article id="post-Java-20180226-Java-엑셀-파일-읽고-쓰는-라이브러리-apache-poi" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Java 엑셀 파일 읽고 쓰는 라이브러리 Apache POI
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/02/26/Java-20180226-Java-엑셀-파일-읽고-쓰는-라이브러리-apache-poi/" class="article-date">
+            <time datetime="2018-02-26T06:17:25.000Z" itemprop="datePublished">2018-02-26</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/ApachePOI/">ApachePOI</a>, <a class="tag-link" href="/tags/Java/">Java</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>앞으로 자바에서 쓰이는 라이브러리들을 알아가는 대로 예제를 보면서 작성할 예정이다.</p>
+<p>그 첫번째로 apache 오픈소스 라이브러리인 apache POI 이다.</p>
+<a id="more"></a>
+<blockquote><p><strong>아파치 POI</strong>(Apache POI)는 <a href="https://ko.wikipedia.org/wiki/%EC%95%84%ED%8C%8C%EC%B9%98_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4_%EC%9E%AC%EB%8B%A8" target="_blank" rel="noopener">아파치 소프트웨어 재단</a>에서 만든 라이브러리로서 <a href="https://ko.wikipedia.org/wiki/%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%86%8C%ED%94%84%ED%8A%B8_%EC%98%A4%ED%94%BC%EC%8A%A4" target="_blank" rel="noopener">마이크로소프트 오피스</a> <a href="https://ko.wikipedia.org/wiki/%ED%8C%8C%EC%9D%BC_%ED%8F%AC%EB%A7%B7" target="_blank" rel="noopener">파일 포맷</a>을 순수 <a href="https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EC%96%B8%EC%96%B4" target="_blank" rel="noopener">자바</a>) 언어로서 읽고 쓰는 기능을 제공한다. 주로 <a href="https://ko.wikipedia.org/wiki/%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%86%8C%ED%94%84%ED%8A%B8_%EC%9B%8C%EB%93%9C" target="_blank" rel="noopener">워드</a>, <a href="https://ko.wikipedia.org/wiki/%EC%97%91%EC%85%80" target="_blank" rel="noopener">엑셀</a>, <a href="https://ko.wikipedia.org/wiki/%ED%8C%8C%EC%9B%8C%ED%8F%AC%EC%9D%B8%ED%8A%B8" target="_blank" rel="noopener">파워포인트</a>와 파일을 지원하며 최근의 오피스 포맷인 Office Open XML File Formats <a href="https://ko.wikipedia.org/wiki/%EC%95%84%ED%8C%8C%EC%B9%98_POI#cite_note-1" target="_blank" rel="noopener">[1]</a> (OOXML, 즉 xml 기반의 <em>.docx, </em>.xlsx, *.pptx 등) 이나 <a href="https://ko.wikipedia.org/wiki/%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%86%8C%ED%94%84%ED%8A%B8_%EC%95%84%EC%9B%83%EB%A3%A9" target="_blank" rel="noopener">아웃룩</a>, <a href="https://ko.wikipedia.org/wiki/%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%86%8C%ED%94%84%ED%8A%B8_%EB%B9%84%EC%A7%80%EC%98%A4" target="_blank" rel="noopener">비지오</a>, <a href="https://ko.wikipedia.org/wiki/%ED%8D%BC%EB%B8%94%EB%A6%AC%EC%85%94" target="_blank" rel="noopener">퍼블리셔</a> 등으로 지원 파일 포맷을 늘려가고 있다.</p>
+<footer><strong>위키백과</strong></footer></blockquote>
+<p><a href="https://poi.apache.org/" target="_blank" rel="noopener">공식사이트</a> 는 여기이고 들어가보면 왼쪽 메뉴에 Component API 를 들어가서 <a href="https://poi.apache.org/spreadsheet/index.html" target="_blank" rel="noopener">Quick Guide</a> 부분을 살펴보면 굉장히 설명이 잘 되어있다.</p>
+<p>필요한 부분을 찾아서 사용하면 될 것 같다. 물론 영어긴 한데 천천히 하면 되지 않을까…싶다.</p>
+<p>예제를 작성하기 전에 라이브러리를 다운 받아야 한다. <a href="https://mvnrepository.com/search?q=poi" target="_blank" rel="noopener">다운로드 주소</a></p>
+<p><img src="/images/apachepoi.png" alt="maven repository"></p>
+<p>위 화면에서 2개가 있는데 첫번째 꺼는 엑셀 2007 이전 버전일 때 사용하고 다음 꺼는 엑셀 2007버전 이후를 read나 write할때 사용된다.</p>
+<p>(2007 버전 전후로 확장자가 xls, xlsx 로 바뀌었다. xlsx가 2007 이후 버전이다.)</p>
+<p>직접 프로젝트에 라이브러리를 다운 받아서 넣어줘도되고 maven을 사용한다면 dependency를 추가해주면 된다. 나는 maven에 추가했다.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.poi<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>poi<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.17<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.poi<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>poi-ooxml<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.17<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="엑셀-Write"><a href="#엑셀-Write" class="headerlink" title="엑셀 Write"></a>엑셀 Write</h3><p>바로 예제를 들어가보면 첫번째로 특정위치에 엑셀 파일을 생성하는 예제이다. 웹으로 생각해보면 어떤 그리드 화면에서 데이터를 입력하고 저장을 누르거나 완료 버튼을 누르면 엑셀 파일로 저장되는 부분이라고 생각(?)하면 될 것 같다. 응용해서 만들어보면 될 것 같다. 이 예제에서는 Java코드에서 바로 데이터를 넣어주었다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.poi.ss.usermodel.Cell;</span><br><span class="line"><span class="keyword">import</span> org.apache.poi.ss.usermodel.Row;</span><br><span class="line"><span class="keyword">import</span> org.apache.poi.xssf.usermodel.XSSFSheet;</span><br><span class="line"><span class="keyword">import</span> org.apache.poi.xssf.usermodel.XSSFWorkbook;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApachePOIExcelWrite</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String FILE_NAME = <span class="string">"/Users/sskim/Downloads/POI_Excel_Example.xlsx"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        XSSFWorkbook workbook = <span class="keyword">new</span> XSSFWorkbook();</span><br><span class="line">        XSSFSheet sheet = workbook.createSheet(<span class="string">"Datatypes in Java"</span>); <span class="comment">//sheet생성</span></span><br><span class="line"></span><br><span class="line">        Object[][] datatypes = &#123;    <span class="comment">//엑셀 셀 데이터</span></span><br><span class="line">                &#123;<span class="string">"Datatype"</span>, <span class="string">"Type"</span>, <span class="string">"Size(in bytes)"</span>&#125;,</span><br><span class="line">                &#123;<span class="string">"int"</span>, <span class="string">"Primitive"</span>, <span class="number">2</span>&#125;,</span><br><span class="line">                &#123;<span class="string">"float"</span>, <span class="string">"Primitive"</span>, <span class="number">4</span>&#125;,</span><br><span class="line">                &#123;<span class="string">"double"</span>, <span class="string">"Primitive"</span>, <span class="number">8</span>&#125;,</span><br><span class="line">                &#123;<span class="string">"char"</span>, <span class="string">"Primitive"</span>, <span class="number">1</span>&#125;,</span><br><span class="line">                &#123;<span class="string">"String"</span>, <span class="string">"Non-Primitive"</span>, <span class="string">"No fixed size"</span>&#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> rowNum = <span class="number">0</span>; <span class="comment">//열</span></span><br><span class="line">        System.out.println(<span class="string">"Creating excel"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Object[] datatype : datatypes) &#123;</span><br><span class="line">            Row row = sheet.createRow(rowNum++);    <span class="comment">//열 생성</span></span><br><span class="line">            <span class="keyword">int</span> colNum = <span class="number">0</span>;                         <span class="comment">//행</span></span><br><span class="line">            <span class="keyword">for</span> (Object field : datatype) &#123;</span><br><span class="line">                Cell cell = row.createCell(colNum++); <span class="comment">//Cell은 데이터 넣는 엑셀의 셀 부분을 생각하면된다.</span></span><br><span class="line">                <span class="keyword">if</span> (field <span class="keyword">instanceof</span> String) &#123;</span><br><span class="line">                    cell.setCellValue((String) field);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (field <span class="keyword">instanceof</span> Integer) &#123;</span><br><span class="line">                    cell.setCellValue((Integer) field);</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            FileOutputStream outputStream = <span class="keyword">new</span> FileOutputStream(FILE_NAME);</span><br><span class="line">            workbook.write(outputStream);</span><br><span class="line">            workbook.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"Done"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/excelread.png" alt="결과화면"></p>
+<h3 id="엑셀-Read"><a href="#엑셀-Read" class="headerlink" title="엑셀 Read"></a>엑셀 Read</h3><p>엑셀 Write와 비슷하게 웹에서 생각해보면 엑셀 업로드 기능같은게 있을 때 활용할 수 있을 것 같다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApachePOIExcelRead</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String FILE_NAME = <span class="string">"/Users/sskim/Downloads/POI_Excel_Example.xlsx"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//엑셀파일 위치 읽어들임</span></span><br><span class="line">            FileInputStream excelFile = <span class="keyword">new</span> FileInputStream(<span class="keyword">new</span> File(FILE_NAME));</span><br><span class="line">            <span class="comment">//엑셀파일을 위치 넣어줌</span></span><br><span class="line">            Workbook workbook = <span class="keyword">new</span> XSSFWorkbook(excelFile);</span><br><span class="line">            <span class="comment">//0번째 sheet를 불러옴</span></span><br><span class="line">            Sheet datatypeSheet = workbook.getSheetAt(<span class="number">0</span>);</span><br><span class="line">            <span class="comment">//열 반복자 생성</span></span><br><span class="line">            Iterator&lt;Row&gt; rowIterator = datatypeSheet.iterator();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (rowIterator.hasNext()) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">//열이 hasNext() 끝날때까지 반복하면서 현재 열을 얻음.</span></span><br><span class="line">                Row currentRow = rowIterator.next();</span><br><span class="line">                <span class="comment">//현재 열의 Cell 즉 엑셀 시트의 데이터 입력 부분 셀을 얻음.</span></span><br><span class="line">                Iterator&lt;Cell&gt; cellIterator = currentRow.iterator();</span><br><span class="line"></span><br><span class="line">                <span class="keyword">while</span> (cellIterator.hasNext()) &#123;</span><br><span class="line">                    <span class="comment">//해당 셀을 반복</span></span><br><span class="line">                    Cell currentCell = cellIterator.next();</span><br><span class="line">                    <span class="keyword">if</span> (currentCell.getCellTypeEnum() == CellType.STRING) &#123;</span><br><span class="line">                        System.out.print(currentCell.getStringCellValue()+<span class="string">"\t\t\t\t"</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (currentCell.getCellTypeEnum() == CellType.NUMERIC) &#123;</span><br><span class="line">                        System.out.print(currentCell.getNumericCellValue()+<span class="string">"\t\t\t\t"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h3><ul>
+<li><a href="https://www.mkyong.com/java/apache-poi-reading-and-writing-excel-file-in-java/" target="_blank" rel="noopener">Mkyong</a></li>
+</ul>
+<ul>
+<li><a href="http://javaslave.tistory.com/79" target="_blank" rel="noopener">POI Library를 이용한 Excel Write</a></li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sskim91.github.io/2018/02/26/Java-20180226-Java-엑셀-파일-읽고-쓰는-라이브러리-apache-poi/" data-id="cjh06dbeq000dfpwiul4bw9c2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 sskim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'sskim91';
+    
+    
+    var disqus_url = 'https://sskim91.github.io/2018/02/26/Java-20180226-Java-엑셀-파일-읽고-쓰는-라이브러리-apache-poi/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

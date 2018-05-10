@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>jQuery 속성 선택자 정리 | Amagrammer</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="jQuery,속성선택자" />
+    
+    <meta name="description" content="jQuery 속성 선택자 정리jQuery는 CSS의 선택자(Selector) 방식을 사용해서 DOM에 접근한다. 선택자에는 여러 종류가 있는데, 자주 사용하는 선택자로는 id 선택자, class선택자, tag선택자 등이 있는데 아래 살펴볼 속성 선택자는 클래스 속성이나 id 속성과 같이 대표적인 속성이 아닌 태그 안의 특정 속성들에 따라 스타일을 지정한다.">
+<meta name="keywords" content="jQuery,속성선택자">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery 속성 선택자 정리">
+<meta property="og:url" content="https://sskim91.github.io/2018/04/19/jQuery-20180419-jQuery-속성-선택자-정리/index.html">
+<meta property="og:site_name" content="Amagrammer">
+<meta property="og:description" content="jQuery 속성 선택자 정리jQuery는 CSS의 선택자(Selector) 방식을 사용해서 DOM에 접근한다. 선택자에는 여러 종류가 있는데, 자주 사용하는 선택자로는 id 선택자, class선택자, tag선택자 등이 있는데 아래 살펴볼 속성 선택자는 클래스 속성이나 id 속성과 같이 대표적인 속성이 아닌 태그 안의 특정 속성들에 따라 스타일을 지정한다.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://sskim91.github.io/images/thumbnail/jQuery.png">
+<meta property="og:updated_time" content="2018-05-10T01:22:15.996Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery 속성 선택자 정리">
+<meta name="twitter:description" content="jQuery 속성 선택자 정리jQuery는 CSS의 선택자(Selector) 방식을 사용해서 DOM에 접근한다. 선택자에는 여러 종류가 있는데, 자주 사용하는 선택자로는 id 선택자, class선택자, tag선택자 등이 있는데 아래 살펴볼 속성 선택자는 클래스 속성이나 id 속성과 같이 대표적인 속성이 아닌 태그 안의 특정 속성들에 따라 스타일을 지정한다.">
+<meta name="twitter:image" content="https://sskim91.github.io/images/thumbnail/jQuery.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">아마그래머</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Programmers/">Programmers</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/JavaScript/">JavaScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/HTML/">HTML</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/라즈베리파이/">라즈베리파이</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/">정리</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/IDE/">IDE</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/JS-Library/">JS Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/Java-Library/">Java Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQuery/">jQuery</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQueryUI/">jQueryUI</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                
+                
+                <section id="main">
+                    <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/정리/">정리</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/정리/jQuery/">jQuery</a>
+    </h1>
+</div>
+                    <div class="main-body-content">
+                        <article id="post-jQuery-20180419-jQuery-속성-선택자-정리" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        jQuery 속성 선택자 정리
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/04/19/jQuery-20180419-jQuery-속성-선택자-정리/" class="article-date">
+            <time datetime="2018-04-19T08:05:28.000Z" itemprop="datePublished">2018-04-19</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/jQuery/">jQuery</a>, <a class="tag-link" href="/tags/속성선택자/">속성선택자</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="jQuery-속성-선택자-정리"><a href="#jQuery-속성-선택자-정리" class="headerlink" title="jQuery 속성 선택자 정리"></a>jQuery 속성 선택자 정리</h3><p>jQuery는 CSS의 선택자(Selector) 방식을 사용해서 DOM에 접근한다. 선택자에는 여러 종류가 있는데, 자주 사용하는 선택자로는 id 선택자, class선택자, tag선택자 등이 있는데 아래 살펴볼 속성 선택자는 클래스 속성이나 id 속성과 같이 대표적인 속성이 아닌 태그 안의 특정 속성들에 따라 스타일을 지정한다. 속성 값의 조건에 따라 다양한 스타일을 지정할 수 있기 때문에 활용도가 높은 스타일 지정 방식이다.</p>
+<table>
+<thead>
+<tr>
+<th>패턴</th>
+<th>의미</th>
+<th>CSS Level</th>
+<th>지원하지 않는브라우저</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E[attr]</td>
+<td>‘attr’ 속성이 포함된 요소 E를 선택합니다.</td>
+<td>2</td>
+<td>IE6</td>
+</tr>
+<tr>
+<td>E[attr=”val”]</td>
+<td>‘attr’ 속성의 값이 정확하게 ‘val’과 일치하는 요소 E를 선택합니다.</td>
+<td>2</td>
+<td>IE6</td>
+</tr>
+<tr>
+<td>E[attr~=”val”]</td>
+<td>‘attr’ 속성의 값에 ‘val’이 포함되는 요소를 선택합니다.(공백으로 분리된 값이 일치해야 합니다.)</td>
+<td>2</td>
+<td>IE6</td>
+</tr>
+<tr>
+<td>E[attr^=”val”]</td>
+<td>‘attr’ 속성의 값이 ‘val’으로 시작하는 요소를 선택합니다.</td>
+<td>3</td>
+<td>IE6</td>
+</tr>
+<tr>
+<td>E[attr$=”val”]</td>
+<td>‘attr’ 속성의 값이 ‘val’으로 끝나는 요소를 선택합니다.</td>
+<td>3</td>
+<td>IE6</td>
+</tr>
+<tr>
+<td>E[attr*=”val”]</td>
+<td>‘attr’ 속성의 값에 ‘val’이 포함되는 요소를 선택합니다.</td>
+<td>3</td>
+<td>IE6</td>
+</tr>
+<tr>
+<td>E[attr\</td>
+<td>=”val”]</td>
+<td>‘attr’ 속성의 값이 정확하게 ‘val’ 이거나’val-‘ 으로 시작되는 요소 E를 선택합니다.</td>
+<td>2</td>
+<td>IE6</td>
+</tr>
+</tbody>
+</table>
+<p>예제를 통해서 하나하나씩 살펴보자</p>
+<h3 id="예제-Selector-name-”value”"><a href="#예제-Selector-name-”value”" class="headerlink" title="예제 Selector[name=”value”]"></a>예제 Selector[name=”value”]</h3><p>“Hot Fuzz”라는 value 값을 가진 input 태그를 찾아서 text를 수정한다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>attributeEquals demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"newsletter"</span> <span class="attr">value</span>=<span class="string">"Hot Fuzz"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>name?<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"newsletter"</span> <span class="attr">value</span>=<span class="string">"Cold Fusion"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>value?<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"newsletter"</span> <span class="attr">value</span>=<span class="string">"Evil Plans"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>value?<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"input[value='Hot Fuzz']"</span> ).next().text( <span class="string">"Hot Fuzz"</span> );</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/sg5vrssc/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<h3 id="예제-Selector-name-”value”-1"><a href="#예제-Selector-name-”value”-1" class="headerlink" title="예제 Selector [name~=”value”]"></a>예제 Selector [name~=”value”]</h3><p>value로 작성된 문자열에  선택자의 속성 값이 일치하면 그 값을 변경해준다.</p>
+<p><strong>!!단 공백으로 분리된 값이 일치해야한다.</strong> 아래 예제를 보면 알겠지만 man이 들어간 input이 첫 번째와 세 번째가 있지만 두 번째 input만 공백으로 분리된 값이 일치하기 때문에 두 번째 input값만 변경되었다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>attributeContainsWord demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"man-news"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"milk man"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"letterman2"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"newmilk"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"input[name~='man']"</span> ).val( <span class="string">"mr. man is in it!"</span> );</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/sg5vrssc/3/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<h3 id="예제-Selector-name-”value”-2"><a href="#예제-Selector-name-”value”-2" class="headerlink" title="예제 Selector [name*=”value”]"></a>예제 Selector [name*=”value”]</h3><p>위의 예제와 똑같지만 다른점은 선택자*= 는 속성의 값이 value 값을 <code>포함</code>하는 요소를 선택한다. 그래서 이번에는 첫 번째 두 번째 세 번째 input 모두 다 name 속성의 값에 man 이 포함 되기 때문에 3개 다 값이 채워진 것을 확인할 수 있다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>attributeContains demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"man-news"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"milkman"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"letterman2"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"newmilk"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"input[name*='man']"</span> ).val( <span class="string">"has man in it!"</span> );</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/sg5vrssc/4/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<h3 id="예제-Selector-name-”value”-3"><a href="#예제-Selector-name-”value”-3" class="headerlink" title="예제 Selector [name|=”value”]"></a>예제 Selector [name|=”value”]</h3><p>선택자의 속성의 값이 value로 시작되거나 value-(하이픈) 으로 시작되는 요소를 선택한다.</p>
+<p>아래 예제처럼 en과 en- 으로 시작되는 요소를 선택해서 css를 변경해주었다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>attributeContainsPrefix demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  a &#123;</span></span><br><span class="line"><span class="undefined">    display: inline-block;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"example.html"</span> <span class="attr">hreflang</span>=<span class="string">"en"</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"example.html"</span> <span class="attr">hreflang</span>=<span class="string">"en-UK"</span>&gt;</span>Some other text<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"example.html"</span> <span class="attr">hreflang</span>=<span class="string">"english"</span>&gt;</span>will not be outlined<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"a[hreflang|='en']"</span> ).css( <span class="string">"border"</span>, <span class="string">"3px dotted green"</span> );</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/sg5vrssc/6/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<h3 id="예제-Selector-name-”value”-4"><a href="#예제-Selector-name-”value”-4" class="headerlink" title="예제 Selector [name^=”value”]"></a>예제 Selector [name^=”value”]</h3><p>선택자의 속성이 value 로 <code>시작!</code>하는 요소를 선택한다. 그냥 value로 시작하는 값으로 시작 하기만 하면 선택된다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>attributeStartsWith demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"newsletter"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"milkman"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"newsboy"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"input[name^='news']"</span> ).val( <span class="string">"news here!"</span> );</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/sg5vrssc/9/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<h3 id="예제-Selector-name-”value”-5"><a href="#예제-Selector-name-”value”-5" class="headerlink" title="예제 Selector [name!=”value”]"></a>예제 Selector [name!=”value”]</h3><p>선택자의 속성 값이 value가 <code>아닌!</code> 요소를 선택한다. jQuery 공식 문서에서는 <code>:not([attr=&#39;value&#39;])</code>와 동등하다고 나와있다.</p>
+<p>추가 노트로는 [name!=”value”] 는 CSS의 명세?부분이 아닌 jQuery의 확장 이다. [name!=”value”] 선택자는 순수 DOM 메서드인 querySelectorAll()의 빠른 퍼포먼스의 이점을 사용하지는 못한다. 최신 브라우저에서의 더 나은 퍼포먼스를 원한다면 <code>$(&quot;your-pure-css-selector&quot;).not(&quot;[name=&#39;value&#39;]&quot;)</code>를 사용하라고 나와있다!</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>attributeNotEqual demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"newsletter"</span> <span class="attr">value</span>=<span class="string">"Hot Fuzz"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>name is newsletter<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"Cold Fusion"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>no name<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"accept"</span> <span class="attr">value</span>=<span class="string">"Evil Plans"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>name is accept<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"input[name!='newsletter']"</span> ).next().append( <span class="string">"&lt;b&gt;; not newsletter&lt;/b&gt;"</span> );</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/sg5vrssc/10/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<h3 id="예제-Selector-name-”value”-6"><a href="#예제-Selector-name-”value”-6" class="headerlink" title="예제 Selector [name$=”value”]"></a>예제 Selector [name$=”value”]</h3><p>선택자의 속성 값이 value로 <code>끝나는!</code> 요소를 선택한다. 아래 예제만 봐도 이해가 될 것이다. 마지막에 letter로 끝나는 input에만 a letter라는 값이 추가되었다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>attributeEndsWith demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"newsletter"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"milkman"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"jobletter"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"input[name$='letter']"</span> ).val( <span class="string">"a letter"</span> );</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/sg5vrssc/13/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sskim91.github.io/2018/04/19/jQuery-20180419-jQuery-속성-선택자-정리/" data-id="cjh06dbg6003hfpwihy4vuqo2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 sskim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'sskim91';
+    
+    
+    var disqus_url = 'https://sskim91.github.io/2018/04/19/jQuery-20180419-jQuery-속성-선택자-정리/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

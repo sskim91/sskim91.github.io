@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>jQuery UI 살펴보기 Datepicker | Amagrammer</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="jQueryUI" />
+    
+    <meta name="description" content="jQuery는 자바스크립트 라이브러리로서 웹 화면에서의 DOM 제어가 수월하기 때문에 웹 개발의 생산성을 향상 시킬 수 있다.">
+<meta name="keywords" content="jQueryUI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery UI 살펴보기 Datepicker">
+<meta property="og:url" content="https://sskim91.github.io/2018/03/06/jQueryUI-20180306-jQuery-UI-살펴보기-Datepicker/index.html">
+<meta property="og:site_name" content="Amagrammer">
+<meta property="og:description" content="jQuery는 자바스크립트 라이브러리로서 웹 화면에서의 DOM 제어가 수월하기 때문에 웹 개발의 생산성을 향상 시킬 수 있다.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://sskim91.github.io/images/thumbnail/jquery-ui-logo.jpg">
+<meta property="og:updated_time" content="2018-05-10T01:25:01.109Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery UI 살펴보기 Datepicker">
+<meta name="twitter:description" content="jQuery는 자바스크립트 라이브러리로서 웹 화면에서의 DOM 제어가 수월하기 때문에 웹 개발의 생산성을 향상 시킬 수 있다.">
+<meta name="twitter:image" content="https://sskim91.github.io/images/thumbnail/jquery-ui-logo.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">아마그래머</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Programmers/">Programmers</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/JavaScript/">JavaScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/HTML/">HTML</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/라즈베리파이/">라즈베리파이</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/">정리</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/IDE/">IDE</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/JS-Library/">JS Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/Java-Library/">Java Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQuery/">jQuery</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQueryUI/">jQueryUI</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                
+                
+                <section id="main">
+                    <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/정리/">정리</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/정리/jQueryUI/">jQueryUI</a>
+    </h1>
+</div>
+                    <div class="main-body-content">
+                        <article id="post-jQueryUI-20180306-jQuery-UI-살펴보기-Datepicker" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        jQuery UI 살펴보기 Datepicker
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/03/06/jQueryUI-20180306-jQuery-UI-살펴보기-Datepicker/" class="article-date">
+            <time datetime="2018-03-06T05:28:16.000Z" itemprop="datePublished">2018-03-06</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/jQueryUI/">jQueryUI</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>jQuery는 자바스크립트 라이브러리로서 웹 화면에서의 DOM 제어가 수월하기 때문에 웹 개발의 생산성을 향상 시킬 수 있다.</p>
+<a id="more"></a>
+<p>거기에서 파생되서 나온 jQuery UI(User Interface)는 jQuery 기반의 GUI 라이브러리 이다.</p>
+<p>jQuery UI 를 사용하면 마우스를 활용해서 드래그 및 드롭다운의 상호작용 효과를 만들 수 있고 버튼이나 체크박스, 데이트픽커 같은</p>
+<p>사용자가 이용할 때 보기도 좋고 쓰기도 좋은 위젯들과 여러가지 효과 그리고 유틸리티를 쉽게 사용할 수 있다.</p>
+<p>그 중에서도 Datepicker는 날짜 선택을 편하게 해줄 수 있는 위젯으로서 그 활용도가 굉장히 높다.</p>
+<p>어느 사이트나 날짜를 선택하는데 있어서 이 Datepicker 위젯을 많이 사용하는 것 같다. 그래서 이번에 한번 이 위젯의</p>
+<p>API를 한번 정리해보려고한다. 정리라고 해봐야 공식 문서에 있는것을 한번 써보고 올리는 것 밖에 안된다. 그래도 해보자.</p>
+<p><a href="http://jqueryui.com/" target="_blank" rel="noopener">공식 홈페이지</a>  가보면 정말 많은 기능이 있다.</p>
+<h3 id="사용법"><a href="#사용법" class="headerlink" title="사용법"></a>사용법</h3><p>일단 jQuery UI를 사용하려면 기존의 jQuery 라이브러리와 jQuery UI 의 css를 적용해 주어야 사용할 수 있다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 3가지 라이브러리 추가 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/jquery-1.12.4.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/ui/1.12.1/jquery-ui.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>간단하게 Datepicker 위젯의 모습을 살펴보면 이렇게 해주면 된다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>datepicker demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 3가지 라이브러리 추가 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/jquery-1.12.4.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/ui/1.12.1/jquery-ui.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"datepicker"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"#datepicker"</span> ).datepicker();</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/hkbxkz1q/10/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<p>위처럼 간단하게 달력 형태의 모습을 띄는 위젯이 생성되었다. 그런데 이렇게만 놔두면 쓸모가 없으니 여러가지 option과 event가 존재한다.</p>
+<p>지금부터 그것을 하나씩 정리해보자.</p>
+<h3 id="Default-Options"><a href="#Default-Options" class="headerlink" title="Default Options"></a>Default Options</h3><p>옵션을 정리하기 전에 Global Options를 적용해 줄 수가 있다. datepicker를 사용하면서 기본옵션을 아래와 같이 해줄수가 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$.datepicker.setDefaults(&#123;</span><br><span class="line">  showOn: <span class="string">"both"</span>,</span><br><span class="line">  buttonImageOnly: <span class="literal">true</span>,</span><br><span class="line">  buttonImage: <span class="string">"calendar.gif"</span>,</span><br><span class="line">  buttonText: <span class="string">"Calendar"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>여기에서는 설명하지 않지만 Datepicker를 한글화로 해서 쓸 수가 있다. 그건 검색해서 알아보자.</p>
+<h3 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h3><ul>
+<li>altfield 옵션<ul>
+<li>datepiker에서 선택한 날짜로 업데이트 하기 위한 옵션이다</li>
+</ul>
+</li>
+<li>altformat 옵션<ul>
+<li>위의 altfield에서 선택한 날짜를 업데이트 할 때 format을 변경하기 위한 옵션이다.</li>
+</ul>
+</li>
+</ul>
+<p>음 설명이 왜이렇게 어렵지.. 설명보다 코드로 확인하는게 아마 더 이해하기 쉬울 것 같다.</p>
+<p>아래 altField에 선택된 옵션 값이 들어가는데 format을 지정해주면 해당 format으로 수정되어서 값이 들어간다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>datepicker demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/jquery-1.12.4.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/ui/1.12.1/jquery-ui.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"inputDate"</span> <span class="attr">placeholder</span>=<span class="string">"datepicker선택"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"alt_date"</span> <span class="attr">placeholder</span>=<span class="string">"altField 수정될 내용"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"#inputDate"</span> ).datepicker(&#123;</span></span><br><span class="line"><span class="javascript">	altField: <span class="string">"#alt_date"</span>,</span></span><br><span class="line"><span class="javascript">  	altFormat: <span class="string">"yy-mm-dd"</span></span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/hkbxkz1q/12/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<p>앞으로는 전체 코드말고 script 부분만 올린다.</p>
+<ul>
+<li>appendText 옵션<ul>
+<li>이 옵션은 선택된 datepicker 날짜 값 필드 다음에 추가로 텍스트를 넣는다</li>
+<li>예를 들어서 사용자에게 날짜를 입력받을 때 꼭 특수한 형식으로 입력하라고 할때 사용하기 좋다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"#inputDate"</span> ).datepicker(&#123;</span></span><br><span class="line"><span class="javascript">	dateFormat: <span class="string">"yy-mm-dd"</span>,</span></span><br><span class="line"><span class="javascript">  	appendText: <span class="string">"yyyy-mm-dd 형식으로 입력"</span></span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/hkbxkz1q/14/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<ul>
+<li>autoSize 옵션<ul>
+<li>true로 설정하면 입력 필드의 크기가 자동으로 조정된다. 크기는 형식에 맞는 크기로 조정되는 것 같다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"#inputDate"</span> ).datepicker(&#123;</span></span><br><span class="line"><span class="javascript">  autoSize: <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>buttonImage 옵션<ul>
+<li>“showOn” 옵션이 “button” 또는 “both”로 설정된 경우 datepicker를 표시하는데 사용할 이미지의 URL 옵션</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"#inputDate"</span> ).datepicker(&#123;</span></span><br><span class="line"><span class="javascript">  buttonImage: <span class="string">"/images/datepicker.gif"</span></span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>buttonImageOnly 옵션<ul>
+<li>이 옵션은 buttonImage 옵션이 설정된 경우에만 사용된다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"#inputDate"</span> ).datepicker(&#123;</span></span><br><span class="line"><span class="javascript">  buttonImageOnly: <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>buttonText 옵션<ul>
+<li>이 옵션 또한 “showOn” 옵션이 button이나 both 로 설정된 경우에만 사용가능하고 버튼에 텍스트를 표시하는 옵션이다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"#inputDate"</span> ).datepicker(&#123;</span></span><br><span class="line"><span class="javascript">  buttonText: <span class="string">"Choose"</span></span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>changeMonth 옵션<ul>
+<li>드롭다운 박스로 월을 변경할 수 있게 해주는 옵션 default 값은 false이고 true 값을 지정해주면 생성된다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"#inputDate"</span> ).datepicker(&#123;</span></span><br><span class="line"><span class="javascript">  changeMonth: <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/hkbxkz1q/15/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>확인해보면 월을 변경할 수 있게 셀렉트 박스(드롭다운)가 생성 되었다.</p>
+<ul>
+<li>changeYear 옵션<ul>
+<li>changeMonth 옵션과 똑같다. year을 변경할 수 있게 드롭다운으로 보여준다. default 값은 false이고 true 값을 지정해주면 된다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"#inputDate"</span> ).datepicker(&#123;</span></span><br><span class="line"><span class="javascript">  changeYear: <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/hkbxkz1q/17/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<ul>
+<li>closeText 옵션<ul>
+<li>datepicker를 닫기 버튼의 Text를 수정하는 옵션이다. default로는 “Done” 이라고 되어있는데 옵션을 통해 수정할 수 있다.</li>
+<li>이 옵션을 사용하기 전에 showButtonPanel 이라는 옵션을 true 값으로 설정해 주어야한다. 이 옵션은 버튼 패널을 보이게한다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"#inputDate"</span> ).datepicker(&#123;</span></span><br><span class="line"><span class="javascript">	showButtonPanel: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">  	closeText: <span class="string">"Close"</span></span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/hkbxkz1q/18/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sskim91.github.io/2018/03/06/jQueryUI-20180306-jQuery-UI-살펴보기-Datepicker/" data-id="cjh06dbez000wfpwif7fntgje" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 sskim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'sskim91';
+    
+    
+    var disqus_url = 'https://sskim91.github.io/2018/03/06/jQueryUI-20180306-jQuery-UI-살펴보기-Datepicker/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

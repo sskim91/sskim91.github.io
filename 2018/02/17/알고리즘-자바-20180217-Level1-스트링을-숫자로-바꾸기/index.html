@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Level1 스트링을 숫자로 바꾸기 | Amagrammer</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Java,Algorithm" />
+    
+    <meta name="description" content="문제 strToInt 메소드는 String형 str을 매개변수로 받습니다.str을 숫자로 변환한 결과를 반환하도록 strToInt를 완성하세요.예를들어 str이 1234이면 1234를 반환하고, -1234이면 -1234를 반환하면 됩니다.str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.">
+<meta name="keywords" content="Java,Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Level1 스트링을 숫자로 바꾸기">
+<meta property="og:url" content="https://sskim91.github.io/2018/02/17/알고리즘-자바-20180217-Level1-스트링을-숫자로-바꾸기/index.html">
+<meta property="og:site_name" content="Amagrammer">
+<meta property="og:description" content="문제 strToInt 메소드는 String형 str을 매개변수로 받습니다.str을 숫자로 변환한 결과를 반환하도록 strToInt를 완성하세요.예를들어 str이 1234이면 1234를 반환하고, -1234이면 -1234를 반환하면 됩니다.str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://sskim91.github.io/images/thumbnail/Java.jpg">
+<meta property="og:updated_time" content="2018-05-09T07:18:30.965Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Level1 스트링을 숫자로 바꾸기">
+<meta name="twitter:description" content="문제 strToInt 메소드는 String형 str을 매개변수로 받습니다.str을 숫자로 변환한 결과를 반환하도록 strToInt를 완성하세요.예를들어 str이 1234이면 1234를 반환하고, -1234이면 -1234를 반환하면 됩니다.str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.">
+<meta name="twitter:image" content="https://sskim91.github.io/images/thumbnail/Java.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">아마그래머</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Programmers/">Programmers</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/JavaScript/">JavaScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/HTML/">HTML</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/라즈베리파이/">라즈베리파이</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/">정리</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/IDE/">IDE</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/JS-Library/">JS Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/Java-Library/">Java Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQuery/">jQuery</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQueryUI/">jQueryUI</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                
+                
+                <section id="main">
+                    <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Algorithm/">Algorithm</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Algorithm/Programmers/">Programmers</a>
+    </h1>
+</div>
+                    <div class="main-body-content">
+                        <article id="post-알고리즘-자바-20180217-Level1-스트링을-숫자로-바꾸기" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Level1 스트링을 숫자로 바꾸기
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/02/17/알고리즘-자바-20180217-Level1-스트링을-숫자로-바꾸기/" class="article-date">
+            <time datetime="2018-02-17T10:33:51.000Z" itemprop="datePublished">2018-02-17</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Algorithm/">Algorithm</a>, <a class="tag-link" href="/tags/Java/">Java</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h4><blockquote>
+<p>strToInt 메소드는 String형 str을 매개변수로 받습니다.<br>str을 숫자로 변환한 결과를 반환하도록 strToInt를 완성하세요.<br>예를들어 str이 1234이면 1234를 반환하고, -1234이면 -1234를 반환하면 됩니다.<br>str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.</p>
+</blockquote>
+<a id="more"></a>
+<p>굉장히 쉬운 문제였다. 그냥 String 문자열을 Int형으로 바꿔주는 parseInt() 메소드만 알면 편하게 풀 수 있는 문제였다.</p>
+<p>근데 알고리즘 문제가 이런식으로 푸는게 맞는 방법인지는 모르겠다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StrToInt</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getStrToInt</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Integer.parseInt(str);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//아래는 테스트로 출력해 보기 위한 코드입니다.</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        StrToInt strToInt = <span class="keyword">new</span> StrToInt();</span><br><span class="line">        System.out.println(strToInt.getStrToInt(<span class="string">"-1234"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sskim91.github.io/2018/02/17/알고리즘-자바-20180217-Level1-스트링을-숫자로-바꾸기/" data-id="cjh06dbge003xfpwiahhs3oc7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 sskim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'sskim91';
+    
+    
+    var disqus_url = 'https://sskim91.github.io/2018/02/17/알고리즘-자바-20180217-Level1-스트링을-숫자로-바꾸기/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

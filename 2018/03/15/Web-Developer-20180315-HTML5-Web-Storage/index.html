@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>HTML5 Web Storage | Amagrammer</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="HTML5,Web-Storage" />
+    
+    <meta name="description" content="소스를 살펴보고 있는 도중에 자바스크립트 부분에서 localStorage와 sessionStorage가 보였다.">
+<meta name="keywords" content="HTML5,Web-Storage">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 Web Storage">
+<meta property="og:url" content="https://sskim91.github.io/2018/03/15/Web-Developer-20180315-HTML5-Web-Storage/index.html">
+<meta property="og:site_name" content="Amagrammer">
+<meta property="og:description" content="소스를 살펴보고 있는 도중에 자바스크립트 부분에서 localStorage와 sessionStorage가 보였다.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://sskim91.github.io/images/thumbnail/HTML5.png">
+<meta property="og:updated_time" content="2018-05-10T01:22:44.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5 Web Storage">
+<meta name="twitter:description" content="소스를 살펴보고 있는 도중에 자바스크립트 부분에서 localStorage와 sessionStorage가 보였다.">
+<meta name="twitter:image" content="https://sskim91.github.io/images/thumbnail/HTML5.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">아마그래머</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Programmers/">Programmers</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/JavaScript/">JavaScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/HTML/">HTML</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/라즈베리파이/">라즈베리파이</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/">정리</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/IDE/">IDE</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/JS-Library/">JS Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/Java-Library/">Java Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQuery/">jQuery</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQueryUI/">jQueryUI</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                
+                
+                <section id="main">
+                    <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Web/">Web</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Web/HTML/">HTML</a>
+    </h1>
+</div>
+                    <div class="main-body-content">
+                        <article id="post-Web-Developer-20180315-HTML5-Web-Storage" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        HTML5 Web Storage
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/03/15/Web-Developer-20180315-HTML5-Web-Storage/" class="article-date">
+            <time datetime="2018-03-15T07:55:33.000Z" itemprop="datePublished">2018-03-15</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/HTML5/">HTML5</a>, <a class="tag-link" href="/tags/Web-Storage/">Web-Storage</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>소스를 살펴보고 있는 도중에 자바스크립트 부분에서 localStorage와 sessionStorage가 보였다.</p>
+<a id="more"></a>
+<p>이게 뭔가 살펴보니까 HTML5에 있는 Web Storage라는 기술이었다.</p>
+<p>모질라 developer 사이트에서는 HTML5 Web Storage를 이렇게 설명하고 있다.</p>
+<p>브라우저에서 쿠키를 사용하는 것 보다 훨씬 직관적으로 데이터를 저장할 수 있다고 한다.</p>
+<p>실제로 Web Storage(이하 웹 저장소)를 사용하면 JSON 형식으로도 저장할 수 있고 기존의 쿠키와 달리</p>
+<p>저장 용량도 더 크고 정보가 서버로 전송되지 않기 때문에 트래픽 비용에서도 이점이 있다고 한다.</p>
+<p>HTML 웹 저장소는 클라이언트에 데이터를 저장하기 위해 두 가지 객체를 제공한다.</p>
+<ul>
+<li>window.localStorage - 만료 날짜가 없는 데이터를 저장한다.</li>
+<li>window.sessionStorage - 하나의 세션에 대해 데이터를 저장한다. (브라우저 탭을 닫으면 데이터가 사라진다.)</li>
+</ul>
+<p>웹 저장소를 사용하기 이전에 localStorage 및 sessionStorage 의 브라우저에 대한 지원 여부를 확인할 필요가 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span>(Storage) !== <span class="string">"undefined"</span>) &#123;</span><br><span class="line">    <span class="comment">// Code for localStorage/sessionStorage.</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// Sorry! No Web Storage support..</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="localStorage-Object"><a href="#localStorage-Object" class="headerlink" title="localStorage Object"></a>localStorage Object</h3><p>localStorage 객체는 쿠키와는 다르게 만료 날짜가 없는 데이터를 저장한다.</p>
+<p>이 데이터는 브라우저를 종료하지 않는 한 삭제되지 않는다. 다음 날 또는 다음 주 몇 년 동안 사용할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Store</span></span><br><span class="line">localStorage.setItem(<span class="string">"lastname"</span>, <span class="string">"Smith"</span>);</span><br><span class="line"><span class="comment">// Retrieve</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML = localStorage.getItem(<span class="string">"lastname"</span>);</span><br></pre></td></tr></table></figure>
+<p>설명</p>
+<p>key/value 형식을 가지는 localStorage를 생성한다. (여기에서 key는 “lastname”, value는 “Smith”)</p>
+<p>lastname이라는 값을 검색해여 id가 result인 요소에 값을 넣는다.</p>
+<p>localStorage에서 “lastname”이라는 키에 해당하는 값을 삭제하고 싶으면 아래와 같이 하면된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.removeItem(<span class="string">"lastname"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>name/value의 쌍은 항상 string 형식으로 저장된다. 저장할 때 항상 string 형식으로 변환해서 저장해야 한다.</strong></p>
+<p>아래의 예제는 사용자가 버튼을 클릭 한 횟수를 계산한다. 이 코드에서 문자열 값은 숫자형으로 변환된다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">clickCounter</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">if</span>(<span class="keyword">typeof</span>(Storage) !== <span class="string">"undefined"</span>) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (localStorage.clickcount) &#123;</span></span><br><span class="line"><span class="javascript">            localStorage.clickcount = <span class="built_in">Number</span>(localStorage.clickcount)+<span class="number">1</span>;</span></span><br><span class="line"><span class="javascript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="undefined">            localStorage.clickcount = 1;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML = <span class="string">"You have clicked the button "</span> + localStorage.clickcount + <span class="string">" time(s)."</span>;</span></span><br><span class="line"><span class="javascript">    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML = <span class="string">"Sorry, your browser does not support web storage..."</span>;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"clickCounter()"</span> <span class="attr">type</span>=<span class="string">"button"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"result"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Click the button to see the counter increase.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/xt0grL8j/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<h3 id="sessionStorage-Object"><a href="#sessionStorage-Object" class="headerlink" title="sessionStorage Object"></a>sessionStorage Object</h3><p>sessionStorage 객체는 하나의 session에 대해서만 데이터를 저장한다는 점만 제외하고는 localStorage 객체와 같다.</p>
+<p>이 데이터는 사용자가 특정 브라우저 탭을 종료하면 삭제된다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">clickCounter</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">if</span>(<span class="keyword">typeof</span>(Storage) !== <span class="string">"undefined"</span>) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (sessionStorage.clickcount) &#123;</span></span><br><span class="line"><span class="javascript">            sessionStorage.clickcount = <span class="built_in">Number</span>(sessionStorage.clickcount)+<span class="number">1</span>;</span></span><br><span class="line"><span class="javascript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="undefined">            sessionStorage.clickcount = 1;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML = <span class="string">"You have clicked the button "</span> + sessionStorage.clickcount + <span class="string">" time(s) in this session."</span>;</span></span><br><span class="line"><span class="javascript">    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML = <span class="string">"Sorry, your browser does not support web storage..."</span>;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"clickCounter()"</span> <span class="attr">type</span>=<span class="string">"button"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"result"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Click the button to see the counter increase.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Close the browser tab (or window), and try again, and the counter is reset.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/zL4pomLf/1/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<p>얼핏 보면 위의 localStorage의 예제와 같아 보이지만 다른 점은 localStorage는 탭을 닫았다가 다시 실행해도 clickcount가 유지되지만 sessionStorage는 브라우저의 탭을 닫았다가 실행하면 데이터가 삭제되고 처음부터 clickcount가 시작된다.</p>
+<h3 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h3><ul>
+<li><a href="https://www.w3schools.com/html/html5_webstorage.asp" target="_blank" rel="noopener">w3schools HTML5 Web Storage</a></li>
+</ul>
+<h3 id="도움-되는-사이트"><a href="#도움-되는-사이트" class="headerlink" title="도움 되는 사이트"></a>도움 되는 사이트</h3><ul>
+<li><a href="https://github.com/milooy/TIL/blob/master/JavaScript/Web-Storage.md" target="_blank" rel="noopener">Web Storage</a></li>
+</ul>
+<ul>
+<li><a href="http://unikys.tistory.com/352" target="_blank" rel="noopener">HTML5 튜토리얼 Web Storage</a></li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sskim91.github.io/2018/03/15/Web-Developer-20180315-HTML5-Web-Storage/" data-id="cjh06dbey000sfpwiatua05ag" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 sskim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'sskim91';
+    
+    
+    var disqus_url = 'https://sskim91.github.io/2018/03/15/Web-Developer-20180315-HTML5-Web-Storage/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

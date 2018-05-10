@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>라즈베리파이3 라즈비안 설치 | Amagrammer</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="RaspberryPI3" />
+    
+    <meta name="description" content="라즈베리파이3를 구입하고 라즈비안 OS를 설치">
+<meta name="keywords" content="RaspberryPI3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="라즈베리파이3 라즈비안 설치">
+<meta property="og:url" content="https://sskim91.github.io/2018/01/05/RaspberryPI3-20180105-라즈베리파이3-라즈비안-설치/index.html">
+<meta property="og:site_name" content="Amagrammer">
+<meta property="og:description" content="라즈베리파이3를 구입하고 라즈비안 OS를 설치">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://sskim91.github.io/images/thumbnail/rasberrypi.png">
+<meta property="og:updated_time" content="2018-05-09T07:18:30.967Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="라즈베리파이3 라즈비안 설치">
+<meta name="twitter:description" content="라즈베리파이3를 구입하고 라즈비안 OS를 설치">
+<meta name="twitter:image" content="https://sskim91.github.io/images/thumbnail/rasberrypi.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">아마그래머</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Programmers/">Programmers</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/JavaScript/">JavaScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/HTML/">HTML</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/라즈베리파이/">라즈베리파이</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/">정리</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/IDE/">IDE</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/JS-Library/">JS Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/Java-Library/">Java Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQuery/">jQuery</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQueryUI/">jQueryUI</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                
+                
+                <section id="main">
+                    <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/라즈베리파이/">라즈베리파이</a>
+    </h1>
+</div>
+                    <div class="main-body-content">
+                        <article id="post-RaspberryPI3-20180105-라즈베리파이3-라즈비안-설치" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        라즈베리파이3 라즈비안 설치
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/01/05/RaspberryPI3-20180105-라즈베리파이3-라즈비안-설치/" class="article-date">
+            <time datetime="2018-01-04T15:03:04.000Z" itemprop="datePublished">2018-01-05</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/RaspberryPI3/">RaspberryPI3</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><strong>라즈베리파이3를 구입하고 라즈비안 OS를 설치</strong><br><a id="more"></a></p>
+<h4 id="1-OS-이미지-다운로드"><a href="#1-OS-이미지-다운로드" class="headerlink" title="1. OS 이미지 다운로드"></a>1. OS 이미지 다운로드</h4><p><a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="noopener">라즈비안OS 다운로드</a> 공식사이트로 이동해서 디스크 이미지를 다운 받습니다.</p>
+
+<p> 왼쪽에 있는 DESKTOP은 GUI가 포함된 OS 이고 오른쪽에 LITE는 콘솔모드로만 이용할 수 있습니다.<br>맨 처음에 GUI가 포함된 파일로 설치를 했었는데 기본적으로 깔려있는 것이 너무 많아서 다시 LITE로 설치했습니다.</p>
+<p>일단 필요한 OS를 받았고 다운받은 디스크 이미지를 이제 SD카드에 이미지를 써야 합니다.</p>
+<!--more-->
+<h4 id="2-SD카드-포맷"><a href="#2-SD카드-포맷" class="headerlink" title="2. SD카드 포맷"></a>2. SD카드 포맷</h4><p>디스크 이미지를 쓰기 전에 SD카드를 포맷할 필요가 있습니다.</p>
+<p><a href="https://www.sdcard.org/downloads/index.html" target="_blank" rel="noopener">sd카드 포맷 다운로드</a> 로 이동해서 자신의 운영체제에 맞는 sd카드 포맷 프로그램을 다운받아서 설치하면 됩니다.</p>
+<p><img src="/images/sdcard.png" alt="라즈베리파이3 라즈비안 설치"></p>
+<p>sd카드가 들어있는 디스크를 선택하고 포맷버튼을 클릭해서 포맷을 하면 됩니다.</p>
+<h4 id="3-SD카드-이미지-쓰기"><a href="#3-SD카드-이미지-쓰기" class="headerlink" title="3. SD카드 이미지 쓰기"></a>3. SD카드 이미지 쓰기</h4><p>포맷한 SD카드에 이제 다운받은 라즈비안os를 쓰면 됩니다.</p>
+<p>window와 macOS 별로 이미지를 쓰는 방법이 다 있지만 저는 데스크탑으로 사용하고 있는 window로 이미지를 굽겠습니다.</p>
+<p>이미지를 구울때 필요한 프로그램을 다운로드 받습니다.</p>
+<p><a href="https://sourceforge.net/projects/win32diskimager/" target="_blank" rel="noopener">win32diskimager</a> ==&gt; 링크를 누르면 다운로드 주소로 이동됩니다.</p>
+<p>프로그램을 설치하고 실행합니다.</p>
+<p><img src="/images/win32disk.png" alt="win32 화면"></p>
+<p>다운받은 이미지 파일을 선택해서 sd카드가 꽂혀있는 드라이브를 선택해서 Write를 시작합니다.<br>대략 5분정도 걸리는 것 같습니다.</p>
+<p>이미지를 다 쓰고나서 window의 경우 디스크 형식이 linux이기 때문에 포맷을 하시겠습니까? 라는 경고창이 뜨는데<br>그냥 취소를 누르면 됩니다.</p>
+<p><strong>macOS 이미지 굽는 방법</strong><br>링크로 대체하겠습니다. <a href="http://ljs93kr.tistory.com/35" target="_blank" rel="noopener">Raspberry Pi 라즈비안 설치하기 (맥 OS)</a></p>
+<h4 id="4-라즈비안OS-설치하기"><a href="#4-라즈비안OS-설치하기" class="headerlink" title="4. 라즈비안OS 설치하기"></a>4. 라즈비안OS 설치하기</h4><p>이제 sd카드를 라즈베리파이에 삽입하고 전원을 연결하면 부팅이 시작됩니다.</p>
+<p><img src="/images/boot.jpeg" alt="부팅화면"></p>
+<h4 id="5-라즈비안-OS-초기-아이디-비밀번호"><a href="#5-라즈비안-OS-초기-아이디-비밀번호" class="headerlink" title="5. 라즈비안 OS 초기 아이디/비밀번호"></a>5. 라즈비안 OS 초기 아이디/비밀번호</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">아이디</th>
+<th style="text-align:left">pi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">비밀번호</td>
+<td style="text-align:left">raspberry</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sskim91.github.io/2018/01/05/RaspberryPI3-20180105-라즈베리파이3-라즈비안-설치/" data-id="cjh06dbet000ifpwi9911cggr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 sskim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'sskim91';
+    
+    
+    var disqus_url = 'https://sskim91.github.io/2018/01/05/RaspberryPI3-20180105-라즈베리파이3-라즈비안-설치/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

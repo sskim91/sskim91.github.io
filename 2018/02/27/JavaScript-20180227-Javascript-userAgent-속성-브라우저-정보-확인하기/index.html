@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Javascript userAgent 속성-브라우저 정보 확인하기 | Amagrammer</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="JavaScript,userAgent" />
+    
+    <meta name="description" content="DOM 객체 Navigator의 userAgent라는 속성이 있다.">
+<meta name="keywords" content="JavaScript,userAgent">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript userAgent 속성-브라우저 정보 확인하기">
+<meta property="og:url" content="https://sskim91.github.io/2018/02/27/JavaScript-20180227-Javascript-userAgent-속성-브라우저-정보-확인하기/index.html">
+<meta property="og:site_name" content="Amagrammer">
+<meta property="og:description" content="DOM 객체 Navigator의 userAgent라는 속성이 있다.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://sskim91.github.io/images/thumbnail/javascript.png">
+<meta property="og:updated_time" content="2018-05-09T07:32:43.700Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript userAgent 속성-브라우저 정보 확인하기">
+<meta name="twitter:description" content="DOM 객체 Navigator의 userAgent라는 속성이 있다.">
+<meta name="twitter:image" content="https://sskim91.github.io/images/thumbnail/javascript.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">아마그래머</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Programmers/">Programmers</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/JavaScript/">JavaScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/HTML/">HTML</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/라즈베리파이/">라즈베리파이</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/">정리</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/IDE/">IDE</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/JS-Library/">JS Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/Java-Library/">Java Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQuery/">jQuery</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQueryUI/">jQueryUI</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                
+                
+                <section id="main">
+                    <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Programming/JavaScript/">JavaScript</a>
+    </h1>
+</div>
+                    <div class="main-body-content">
+                        <article id="post-JavaScript-20180227-Javascript-userAgent-속성-브라우저-정보-확인하기" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Javascript userAgent 속성-브라우저 정보 확인하기
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/02/27/JavaScript-20180227-Javascript-userAgent-속성-브라우저-정보-확인하기/" class="article-date">
+            <time datetime="2018-02-27T02:23:26.000Z" itemprop="datePublished">2018-02-27</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="tag-link" href="/tags/userAgent/">userAgent</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>DOM 객체 Navigator의 userAgent라는 속성이 있다.</p>
+<a id="more"></a>
+<p>이 속성은 브라우저의 정보를 표시해주는 속성이다.</p>
+<p>현재 사용하고 있는 브라우저의 정보를 확인할 수 있다.</p>
+<p>모바일도 각각의 브라우저가 있다.</p>
+<p>userAgent 속성은 브라우저에서 서버로 보낸 사용자 에이전트 헤더의 값을 반환한다.</p>
+<p>반환 된 값에는 브라우저의 이름, 버전 및 플랫폼에 대한 정보가 들어 있다. (이 프로퍼티는 읽기 전용이다.)</p>
+<h3 id="문법"><a href="#문법" class="headerlink" title="문법"></a>문법</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navigator.userAgent</span><br></pre></td></tr></table></figure>
+<h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"demo"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> txt = <span class="string">""</span>;</span><br><span class="line">txt += <span class="string">"&lt;p&gt;Browser CodeName: "</span> + navigator.appCodeName + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">txt += <span class="string">"&lt;p&gt;Browser Name: "</span> + navigator.appName + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">txt += <span class="string">"&lt;p&gt;Browser Version: "</span> + navigator.appVersion + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">txt += <span class="string">"&lt;p&gt;Cookies Enabled: "</span> + navigator.cookieEnabled + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">txt += <span class="string">"&lt;p&gt;Browser Language: "</span> + navigator.language + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">txt += <span class="string">"&lt;p&gt;Browser Online: "</span> + navigator.onLine + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">txt += <span class="string">"&lt;p&gt;Platform: "</span> + navigator.platform + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">txt += <span class="string">"&lt;p&gt;User-agent header: "</span> + navigator.userAgent + <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>).innerHTML = txt;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/결과</span></span><br><span class="line"><span class="regexp">Browser CodeName: Mozilla</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Browser Name: Netscape</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Browser Version: 5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/</span><span class="number">537.36</span> (KHTML, like Gecko) Chrome/<span class="number">64.0</span><span class="number">.3282</span><span class="number">.167</span> Safari/<span class="number">537.36</span></span><br><span class="line"></span><br><span class="line">Cookies Enabled: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">Browser Language: ko</span><br><span class="line"></span><br><span class="line">Browser Online: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">Platform: MacIntel</span><br><span class="line"></span><br><span class="line">User-agent header: Mozilla/<span class="number">5.0</span> (Macintosh; Intel Mac OS X <span class="number">10</span>_13_3) AppleWebKit/<span class="number">537.36</span> (KHTML, like Gecko) Chrome/<span class="number">64.0</span><span class="number">.3282</span><span class="number">.167</span> Safari/<span class="number">537.36</span></span><br></pre></td></tr></table></figure>
+<p>인터넷에서 바로 userAgent를 확인할 수 있는 사이트도 있다.</p>
+<p><a href="http://useragentstring.com/index.php" target="_blank" rel="noopener">User Agent String.Com </a></p>
+<h3 id="Javascript-로-userAgent를-가져와서-간단하게-모바일-디바이스를-구분하는-함수-소스"><a href="#Javascript-로-userAgent를-가져와서-간단하게-모바일-디바이스를-구분하는-함수-소스" class="headerlink" title="Javascript 로 userAgent를 가져와서 간단하게 모바일 디바이스를 구분하는 함수 소스"></a>Javascript 로 userAgent를 가져와서 간단하게 모바일 디바이스를 구분하는 함수 소스</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 모바일 에이전트 구분</span></span><br><span class="line"><span class="keyword">var</span> isMobile = &#123;</span><br><span class="line">        Android: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                 <span class="keyword">return</span> navigator.userAgent.match(<span class="regexp">/Android/i</span>) == <span class="literal">null</span> ? <span class="literal">false</span> : <span class="literal">true</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        BlackBerry: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                 <span class="keyword">return</span> navigator.userAgent.match(<span class="regexp">/BlackBerry/i</span>) == <span class="literal">null</span> ? <span class="literal">false</span> : <span class="literal">true</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        IOS: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                 <span class="keyword">return</span> navigator.userAgent.match(<span class="regexp">/iPhone|iPad|iPod/i</span>) == <span class="literal">null</span> ? <span class="literal">false</span> : <span class="literal">true</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        Opera: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                 <span class="keyword">return</span> navigator.userAgent.match(<span class="regexp">/Opera Mini/i</span>) == <span class="literal">null</span> ? <span class="literal">false</span> : <span class="literal">true</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        Windows: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                 <span class="keyword">return</span> navigator.userAgent.match(<span class="regexp">/IEMobile/i</span>) == <span class="literal">null</span> ? <span class="literal">false</span> : <span class="literal">true</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        any: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                 <span class="keyword">return</span> (isMobile.Android() || isMobile.BlackBerry() || isMobile.IOS() || isMobile.Opera() || isMobile.Windows());</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//출처: http://cofs.tistory.com/214 [CofS]</span></span><br></pre></td></tr></table></figure>
+<h3 id="사용방법"><a href="#사용방법" class="headerlink" title="사용방법"></a>사용방법</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(isMobile.any())&#123;</span><br><span class="line">    <span class="keyword">if</span>(isMobile.Android())&#123;</span><br><span class="line"></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(isMobile.IOS())&#123;</span><br><span class="line"></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(isMobile.BlackBerry())&#123;</span><br><span class="line"></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(isMobile.Opera())&#123;</span><br><span class="line"></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(isMobile.Windows())&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//1# : any 함수로 모바일인지 아닌지를 구분한다.</span></span><br><span class="line"><span class="comment">//2# ~ : 각 모바일 디바이스를 구분한다.</span></span><br><span class="line"><span class="comment">//출처: http://cofs.tistory.com/214 [CofS]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>참조 <a href="http://cofs.tistory.com/214" target="_blank" rel="noopener">http://cofs.tistory.com/214</a> [CofS]</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sskim91.github.io/2018/02/27/JavaScript-20180227-Javascript-userAgent-속성-브라우저-정보-확인하기/" data-id="cjh06dbes000gfpwiayjapgup" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 sskim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'sskim91';
+    
+    
+    var disqus_url = 'https://sskim91.github.io/2018/02/27/JavaScript-20180227-Javascript-userAgent-속성-브라우저-정보-확인하기/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

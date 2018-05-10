@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>DBMS 데이터베이스 관리 시스템 | Amagrammer</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="database,mysql" />
+    
+    <meta name="description" content="DBSM란?">
+<meta name="keywords" content="database,mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DBMS 데이터베이스 관리 시스템">
+<meta property="og:url" content="https://sskim91.github.io/2018/01/10/Database-20180110-DBMS-데이터베이스-관리-시스템/index.html">
+<meta property="og:site_name" content="Amagrammer">
+<meta property="og:description" content="DBSM란?">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://sskim91.github.io/images/thumbnail/mysql.png">
+<meta property="og:updated_time" content="2018-05-09T07:24:25.203Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DBMS 데이터베이스 관리 시스템">
+<meta name="twitter:description" content="DBSM란?">
+<meta name="twitter:image" content="https://sskim91.github.io/images/thumbnail/mysql.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">아마그래머</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Programmers/">Programmers</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/JavaScript/">JavaScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/HTML/">HTML</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/라즈베리파이/">라즈베리파이</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/">정리</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/IDE/">IDE</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/JS-Library/">JS Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/Java-Library/">Java Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQuery/">jQuery</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQueryUI/">jQueryUI</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                
+                
+                <section id="main">
+                    <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Database/">Database</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Database/MySQL/">MySQL</a>
+    </h1>
+</div>
+                    <div class="main-body-content">
+                        <article id="post-Database-20180110-DBMS-데이터베이스-관리-시스템" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        DBMS 데이터베이스 관리 시스템
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/01/10/Database-20180110-DBMS-데이터베이스-관리-시스템/" class="article-date">
+            <time datetime="2018-01-10T04:16:31.000Z" itemprop="datePublished">2018-01-10</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/database/">database</a>, <a class="tag-link" href="/tags/mysql/">mysql</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>DBSM란?</p>
+<a id="more"></a>
+<blockquote><p><strong>데이터베이스 관리 시스템</strong>(<a href="https://ko.wikipedia.org/wiki/%EC%98%81%EC%96%B4" target="_blank" rel="noopener">영어</a>: database management system, <strong>DBMS</strong>)은 다수의 사용자들이 <a href="https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4" target="_blank" rel="noopener">데이터베이스</a> 내의 데이터를 접근할 수 있도록 해주는 소프트웨어 도구의 집합이다. DBMS은 사용자 또는 다른 프로그램의 요구를 처리하고 적절히 응답하여 데이터를 사용할 수 있도록 해준다.</p>
+<footer><strong>위키백과</strong></footer></blockquote>
+<p>데이터베이스를 <code>데이터의 집합체</code> 이라고 정의한다면 DBMS는 이 데이터베이스를 관리 또는 운영하는 역할을 한다.</p>
+<p>DBMS는 데이터베이스를 관리하는 역할을 하는 소프트웨어의 개념이다. 또, 여러 명의 사용자나 응용프로그램이 이 DBMS가 관리하는 데이터에 동시에 접속하고 데이터를 공유하게 된다.</p>
+<!--more-->
+<h2 id="DBMS의-특징"><a href="#DBMS의-특징" class="headerlink" title="DBMS의 특징"></a>DBMS의 특징</h2><ol>
+<li><strong>데이터의 무결성</strong></li>
+</ol>
+<p>데이터베이스 안의 데이터는 어떤 경로를 통해 들어 왔던지 데이터에 오류가 있어서는 안된다. 이 무결성(Integrity)을 위해서 데이터베이스는 제약 조건(Constrain)이라는 특성을 가진다.</p>
+<ol>
+<li><strong>데이터의 독립성</strong></li>
+</ol>
+<p>데이터베이스의 크기를 변경하거나 데이터 파일의 저장소를 변경하더라도 기존에 작성된 응용프로그램은 전혀 영향을 받지 않아야 한다. 즉, 서로 의존적 관계가 아닌 독립적인 관계여야 한다.</p>
+<ol>
+<li><strong>보안</strong></li>
+</ol>
+<p>데이터베이스 안의 데이터에 아무나 접근할 수 있는 것이 아니라 데이터를 소유한 사람이나 데이터에 접근이 허가된 사람만 접근할 수 있어야 한다. 또, 접근할 때도 사용자의 계정에 따라서 다른 권한을 가져야 한다.</p>
+<ol>
+<li><strong>데이터 중복의 최소화</strong></li>
+</ol>
+<p>동일한 데이터가 여러 개 중복되어 저장되는 것을 방지한다.</p>
+<ol>
+<li><strong>응용프로그램 제작 및 수정이 쉬워짐</strong></li>
+</ol>
+<p>기존 파일시스템을 사용할 때는 각각 파일의 포맷에 맞춰 개발해야 하는 응용프로그램을 데이터베이스를 이용함으로써 통일된 방식으로 응용프로그램 작성이 가능해지고, 유지보수 또한 쉬워진다.</p>
+<ol>
+<li><strong>데이터의 안전성 향상</strong></li>
+</ol>
+<p>대부분의 DBMS가 제공하는 백업과 복원 기능을 이용함으로써, 데이터가 깨지는 문제가 발생할 경우에 원상태로 복원 또는 복구하는 방법이 명확해진다.</p>
+<h2 id="DBMS-분류"><a href="#DBMS-분류" class="headerlink" title="DBMS 분류"></a>DBMS 분류</h2><p> DBMS의 유형은 크게 <strong>계층형DBMS</strong>, <strong>망형DBMS</strong>, <strong>관계형DBMS</strong>, <strong>객체지향형DBMS</strong>, 그리고 <strong>객체관계형DBMS</strong> 등으로 분류된다.</p>
+<p>현재 사용되는 DBMS 중에는 <code>관계형 DBMS</code>가 가장 많은 부분을 차지하며, 일부 멀티미디어 분야에서 객체지향형이나 객체관계형 DBMS가 활용되고 있는 추세이다.</p>
+<p>MySQL과 더불어 Oracle, DB2, SQL Server, Access 등은 모두 <code>관계형 DBMS</code> 이다.</p>
+<h3 id="관계형-DBMS"><a href="#관계형-DBMS" class="headerlink" title="관계형 DBMS"></a>관계형 DBMS</h3><p>관계형 DBMS의 시초는 1969년 E.F.Codd라는 학자가 수학 모델에 근거해서 고안하면서 시작되었다.</p>
+<p>RDBMS의 핵심 개념은 <code>데이터베이스는 테이블이라 불리는 최소 단위로 구성되어있다. 그리고 이 테이블은 하나 이상의 열로 구성되어 있다.</code> 라고 생각하면 된다.</p>
+<p><img src="http://cfile27.uf.tistory.com/image/036BEC3451A2F69434AA45" alt="관계형 데이터베이스 테이블 구조"></p>
+<p>관계형 DBMS에서 모든 데이터는 테이블에 저장되므로 테이블이라는 구조가 RDBMS의 가장 기본적이고 중요한 구성이 된다.</p>
+<h3 id="관계형-DBMS의-장점과-단점"><a href="#관계형-DBMS의-장점과-단점" class="headerlink" title="관계형 DBMS의 장점과 단점"></a>관계형 DBMS의 장점과 단점</h3><h4 id="장점"><a href="#장점" class="headerlink" title="장점"></a>장점</h4><ul>
+<li>다른 DBMS에 비해서 쉽게 변화에 순응할 수 있는 구조</li>
+<li>유지보수 측면에서도 편리한 특징을 가지고 있다.</li>
+<li>대용량 데이터의 관리와 데이터 무결성의 보장</li>
+<li>동시에 데이터에 접근하는 응용프로그램을 사용할 경우 RDBMS는 적절한 선택</li>
+</ul>
+<h3 id="단점"><a href="#단점" class="headerlink" title="단점"></a>단점</h3><ul>
+<li>시스템 자원을 많이 차지하므로 시스템이 전반적으로 느려짐</li>
+<li>그러나 최근에는 하드웨어의 급속한 발전으로 인해서 이러한 단점은 많이 보완되고 있다.</li>
+</ul>
+<h2 id="SQL-Structured-Query-Language"><a href="#SQL-Structured-Query-Language" class="headerlink" title="SQL(Structured Query Language)"></a>SQL(Structured Query Language)</h2><p>SQL은 관계형 데이터베이스에서 사용되는 언어이다. 관계형 DBMS를 배우고자 한다면 SQL을 익혀야 하는 것은 필수이다.</p>
+<h3 id="SQL의-특징"><a href="#SQL의-특징" class="headerlink" title="SQL의 특징"></a>SQL의 특징</h3><ul>
+<li><h4 id="DBMS-제작-회사와-독립적이다"><a href="#DBMS-제작-회사와-독립적이다" class="headerlink" title="DBMS 제작 회사와 독립적이다."></a>DBMS 제작 회사와 독립적이다.</h4></li>
+</ul>
+<p>SQL은 모든 DBMS 제작회사에서 공통적으로 공개되고 각 제작회사는 이 표준 SQL에 맞춰서 DBMS를 개발한다. 그러므로 표준 SQL은 대부분의 DBMS 제품에서 공통적으로 호환된다.</p>
+<ul>
+<li><h4 id="다른-시스템으로의-이식성이-좋다"><a href="#다른-시스템으로의-이식성이-좋다" class="headerlink" title="다른 시스템으로의 이식성이 좋다"></a>다른 시스템으로의 이식성이 좋다</h4></li>
+</ul>
+<p>SQL 표준은 서버용, 개인용, 휴대용 장비에서 운영되는 DBMS마다 상호 호환성이 뛰어나다. 그러므로 어느 곳에서 사용된 SQL을 다른 시스템으로 이식하는 데 별 문제가 없다.</p>
+<ul>
+<li><h4 id="표준이-계속-발전한다"><a href="#표준이-계속-발전한다" class="headerlink" title="표준이 계속 발전한다."></a>표준이 계속 발전한다.</h4></li>
+</ul>
+<ul>
+<li><h4 id="대화식-언어이다"><a href="#대화식-언어이다" class="headerlink" title="대화식 언어이다."></a>대화식 언어이다.</h4></li>
+</ul>
+<p>기존 프로그래밍 언어는 프로그램 작성, 컴파일 및 디버깅, 실행이라는 과정을 거쳐야만 그 결과를 확인할 수 있었으나 SQL은 이와 달리 바로 질의하고 결과를 얻는 대화식 언어로 구성되어 있다.</p>
+<ul>
+<li><h4 id="분산형-클라이언트-서버-구조이다"><a href="#분산형-클라이언트-서버-구조이다" class="headerlink" title="분산형 클라이언트/서버 구조이다."></a>분산형 클라이언트/서버 구조이다.</h4></li>
+</ul>
+<p>SQL은 분산형 구조인 클라이언트/서버 구조를 지원한다. 즉, 클라이언트에서 질의를 하면 서버에서 그 질의를 받아서 처리한 후, 다시 클라이언트에게 전달하는 구조를 가진다.</p>
+<p>주의할 점은 모든 DBMS의 SQL문이 완벽하게 동일하지는 않다. 많은 DBMS 벤더들이 표준 SQL을 준수하려고 하지만 각 벤더마다 특징이 있기에 현실적으로 완전히 통일되기는 어렵다. 그래서 각 회사는 표준 SQL을 지키면서도 자신의 제품에 특화시킨 SQL을 사용한다.</p>
+<ul>
+<li>Oracle은 PL/SQL</li>
+<li>SQL Server는 T-SQL</li>
+<li>MySQL는 그냥 SQL</li>
+</ul>
+<p><img src="/images/sql.png" alt="표준 SQL과 각 회사의 SQL"></p>
+<h5 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h5><ul>
+<li>위키백과</li>
+<li>책 <a href="http://www.yes24.com/24/goods/27915555?scode=029" target="_blank" rel="noopener">이것이 MySQL이다.</a></li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sskim91.github.io/2018/01/10/Database-20180110-DBMS-데이터베이스-관리-시스템/" data-id="cjh06dbed0003fpwi989b3ryu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 sskim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'sskim91';
+    
+    
+    var disqus_url = 'https://sskim91.github.io/2018/01/10/Database-20180110-DBMS-데이터베이스-관리-시스템/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>jQuery API data 메서드 | Amagrammer</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="jQuery" />
+    
+    <meta name="description" content="data() 메서드일치된 요소와 임의의 data를 저장하거나 data의 key값으로 지정한 값을 가져올 수 있다.  .data( key, value ) key Type: String data가 저장된 key 값  value Type: Anything Javascript에서 지원하는 모든 type의 데이터 (undefined 제외)   .data( obj )">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery API data 메서드">
+<meta property="og:url" content="https://sskim91.github.io/2018/04/19/jQuery-20180419-jQuery-API-data-메서드/index.html">
+<meta property="og:site_name" content="Amagrammer">
+<meta property="og:description" content="data() 메서드일치된 요소와 임의의 data를 저장하거나 data의 key값으로 지정한 값을 가져올 수 있다.  .data( key, value ) key Type: String data가 저장된 key 값  value Type: Anything Javascript에서 지원하는 모든 type의 데이터 (undefined 제외)   .data( obj )">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://sskim91.github.io/images/thumbnail/jQuery.png">
+<meta property="og:updated_time" content="2018-05-10T01:22:16.028Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery API data 메서드">
+<meta name="twitter:description" content="data() 메서드일치된 요소와 임의의 data를 저장하거나 data의 key값으로 지정한 값을 가져올 수 있다.  .data( key, value ) key Type: String data가 저장된 key 값  value Type: Anything Javascript에서 지원하는 모든 type의 데이터 (undefined 제외)   .data( obj )">
+<meta name="twitter:image" content="https://sskim91.github.io/images/thumbnail/jQuery.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">아마그래머</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Programmers/">Programmers</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/JavaScript/">JavaScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/HTML/">HTML</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/라즈베리파이/">라즈베리파이</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/">정리</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/IDE/">IDE</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/JS-Library/">JS Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/Java-Library/">Java Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQuery/">jQuery</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQueryUI/">jQueryUI</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                
+                
+                <section id="main">
+                    <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/정리/">정리</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/정리/jQuery/">jQuery</a>
+    </h1>
+</div>
+                    <div class="main-body-content">
+                        <article id="post-jQuery-20180419-jQuery-API-data-메서드" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        jQuery API data 메서드
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/04/19/jQuery-20180419-jQuery-API-data-메서드/" class="article-date">
+            <time datetime="2018-04-19T07:59:32.000Z" itemprop="datePublished">2018-04-19</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/jQuery/">jQuery</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="data-메서드"><a href="#data-메서드" class="headerlink" title="data() 메서드"></a>data() 메서드</h3><p>일치된 요소와 임의의 data를 저장하거나 data의 key값으로 지정한 값을 가져올 수 있다.</p>
+<blockquote>
+<h4 id="data-key-value"><a href="#data-key-value" class="headerlink" title=".data( key, value )"></a>.data( key, value )</h4><ul>
+<li><p><strong>key</strong></p>
+<p>Type: <a href="http://api.jquery.com/Types/#String" target="_blank" rel="noopener">String</a></p>
+<p>data가 저장된 key 값</p>
+</li>
+<li><p><strong>value</strong></p>
+<p>Type: <a href="http://api.jquery.com/Types/#Anything" target="_blank" rel="noopener">Anything</a></p>
+<p>Javascript에서 지원하는 모든 type의 데이터 (undefined 제외)</p>
+</li>
+</ul>
+<h4 id="data-obj"><a href="#data-obj" class="headerlink" title=".data( obj )"></a>.data( obj )</h4><ul>
+<li><p><strong>obj</strong></p>
+<p>Type: <a href="http://api.jquery.com/Types/#Object" target="_blank" rel="noopener">Object</a></p>
+<p>업데이트할 key-value 쌍의 객체</p>
+</li>
+</ul>
+</blockquote>
+<p>data() 메서드를 사용하면 모든 유형의 데이터를 DOM 요소에 추가할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$( <span class="string">"body"</span> ).data( <span class="string">"foo"</span>, <span class="number">52</span> );</span><br><span class="line">$( <span class="string">"body"</span> ).data( <span class="string">"bar"</span>, &#123; <span class="attr">myType</span>: <span class="string">"test"</span>, <span class="attr">count</span>: <span class="number">40</span> &#125; );</span><br><span class="line">$( <span class="string">"body"</span> ).data( &#123; <span class="attr">baz</span>: [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ] &#125; );</span><br><span class="line">$( <span class="string">"body"</span> ).data( <span class="string">"foo"</span> ); <span class="comment">// 52</span></span><br><span class="line">$( <span class="string">"body"</span> ).data(); <span class="comment">// &#123; foo: 52, bar: &#123; myType: "test", count: 40 &#125;, baz: [ 1, 2, 3 ] &#125;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><p>div에 data를 저장하고 저장한 값을 가져 온다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>data demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  div &#123;</span></span><br><span class="line"><span class="undefined">    color: blue;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  span &#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  The values stored were</span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  and</span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"div"</span> ).data( <span class="string">"test"</span>, &#123; <span class="attr">first</span>: <span class="number">16</span>, <span class="attr">last</span>: <span class="string">"pizza!"</span> &#125; );</span></span><br><span class="line"><span class="javascript">$( <span class="string">"span:first"</span> ).text( $( <span class="string">"div"</span> ).data( <span class="string">"test"</span> ).first );</span></span><br><span class="line"><span class="javascript">$( <span class="string">"span:last"</span> ).text( $( <span class="string">"div"</span> ).data( <span class="string">"test"</span> ).last );</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/0yz160zp/2/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+
+
+<p>HTML5의 <code>data-</code>로 시작하는 속성이나 data(key, value)로 설정된 jQuery 컬렉션의 첫 번째 요소에 대해 key에 맞는 값을 반환한다.</p>
+<blockquote>
+<h4 id="data-key"><a href="#data-key" class="headerlink" title=".data( key )"></a>.data( key )</h4><ul>
+<li><p><strong>key</strong></p>
+<p>Type: <a href="http://api.jquery.com/Types/#String" target="_blank" rel="noopener">String</a></p>
+<p>데이터에 저장된 key 값 (이름)</p>
+</li>
+</ul>
+<h4 id="data"><a href="#data" class="headerlink" title=".data()"></a>.data()</h4><ul>
+<li>This signature does not accept any arguments.</li>
+</ul>
+</blockquote>
+<p>data() 메서드를 사용하면 한 번에 하나의 요소에 대해 여러 개의 고유 한 값을 검색하거나 한 세트로 검색 할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert( $( <span class="string">"body"</span> ).data( <span class="string">"foo"</span> ) );</span><br><span class="line">alert( $( <span class="string">"body"</span> ).data() );</span><br></pre></td></tr></table></figure>
+<p>위의 행은 body 요소에 설정된 데이터 값을 경고합니다. 해당 요소에 데이터가 설정되지 않은 경우 undefined가 반환됩니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert( $( <span class="string">"body"</span> ).data( <span class="string">"foo"</span> ) ); <span class="comment">// undefined</span></span><br><span class="line">$( <span class="string">"body"</span> ).data( <span class="string">"bar"</span>, <span class="string">"foobar"</span> );</span><br><span class="line">alert( $( <span class="string">"body"</span> ).data( <span class="string">"bar"</span> ) ); <span class="comment">// foobar</span></span><br></pre></td></tr></table></figure>
+<p>jQuery 3 버전부터 Dataset API 사양에 맞춘다고 한다.</p>
+<p>Writing a statement like <code>$( &quot;body&quot; ).data( { &quot;my-name&quot;: &quot;aValue&quot; } ).data();</code> will return <code>{ myName: &quot;aValue&quot; }</code>.</p>
+<p><strong>HTML5의 data- 속성을 jQuery에서 가져오는 방법</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-role</span>=<span class="string">"page"</span> <span class="attr">data-last-value</span>=<span class="string">"43"</span> <span class="attr">data-hidden</span>=<span class="string">"true"</span> <span class="attr">data-options</span>=<span class="string">'&#123;"name":"John"&#125;'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>jQuery</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$( <span class="string">"div"</span> ).data( <span class="string">"role"</span> ) === <span class="string">"page"</span>;</span><br><span class="line">$( <span class="string">"div"</span> ).data( <span class="string">"lastValue"</span> ) === <span class="number">43</span>;</span><br><span class="line">$( <span class="string">"div"</span> ).data( <span class="string">"hidden"</span> ) === <span class="literal">true</span>;</span><br><span class="line">$( <span class="string">"div"</span> ).data( <span class="string">"options"</span> ).name === <span class="string">"John"</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="예제-1"><a href="#예제-1" class="headerlink" title="예제"></a>예제</h3><p>요소에 저장된 “blah”라는 key에 대한 값을 가져온다.</p>
+<p>첫번째 버튼은 blah 라고 저장된 키에 대한 값을 가지고오고 2번째 3번째는 blah 에 값을 저장한다. 그리고 4번째 버튼은 blah 값을 제거한다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>data demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  div &#123;</span></span><br><span class="line"><span class="undefined">    margin: 5px;</span></span><br><span class="line"><span class="undefined">    background: yellow;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  button &#123;</span></span><br><span class="line"><span class="undefined">    margin: 5px;</span></span><br><span class="line"><span class="undefined">    font-size: 14px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  p &#123;</span></span><br><span class="line"><span class="undefined">    margin: 5px;</span></span><br><span class="line"><span class="undefined">    color: blue;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  span &#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>A div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>Get "blah" from the div<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>Set "blah" to "hello"<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>Set "blah" to 86<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>Remove "blah" from the div<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>The "blah" value of this div is <span class="tag">&lt;<span class="name">span</span>&gt;</span>?<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">$( <span class="string">"button"</span> ).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> value;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">switch</span> ( $( <span class="string">"button"</span> ).index( <span class="keyword">this</span> ) ) &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">case</span> <span class="number">0</span> :</span></span><br><span class="line"><span class="javascript">      value = $( <span class="string">"div"</span> ).data( <span class="string">"blah"</span> );</span></span><br><span class="line"><span class="javascript">      <span class="keyword">break</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">case</span> <span class="number">1</span> :</span></span><br><span class="line"><span class="javascript">      $( <span class="string">"div"</span> ).data( <span class="string">"blah"</span>, <span class="string">"hello"</span> );</span></span><br><span class="line"><span class="javascript">      value = <span class="string">"Stored!"</span>;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">break</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">case</span> <span class="number">2</span> :</span></span><br><span class="line"><span class="javascript">      $( <span class="string">"div"</span> ).data( <span class="string">"blah"</span>, <span class="number">86</span> );</span></span><br><span class="line"><span class="javascript">      value = <span class="string">"Stored!"</span>;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">break</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">case</span> <span class="number">3</span> :</span></span><br><span class="line"><span class="javascript">      $( <span class="string">"div"</span> ).removeData( <span class="string">"blah"</span> );</span></span><br><span class="line"><span class="javascript">      value = <span class="string">"Removed!"</span>;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">break</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">  $( <span class="string">"span"</span> ).text( <span class="string">""</span> + value );</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/0yz160zp/4/embedded/result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sskim91.github.io/2018/04/19/jQuery-20180419-jQuery-API-data-메서드/" data-id="cjh06dbfw002rfpwialqx2zf2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 sskim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'sskim91';
+    
+    
+    var disqus_url = 'https://sskim91.github.io/2018/04/19/jQuery-20180419-jQuery-API-data-메서드/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Homebrew 정리 | Amagrammer</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Homebrew,Homebrew Cask" />
+    
+    <meta name="description" content="HomebrewHomebrew란 간단히 말해서 Mac용 패키지 관리자이다. 리눅스에서 데비안, 우분투는 apt-get-install로 패키지를 알아서 설치하고 CentOS 는 yum으로 설치하는데 Mac도 Homebrew라는 패키지관리자를 통해서 패키지를 쉽게 설치할수 있다. (brew를 통해 설치하면 패키지의 의존하는 패키지들도 알아서 설치해준다.) 개발">
+<meta name="keywords" content="Homebrew,Homebrew Cask">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Homebrew 정리">
+<meta property="og:url" content="https://sskim91.github.io/2018/05/11/Web-Developer-20180511-Homebrew-정리/index.html">
+<meta property="og:site_name" content="Amagrammer">
+<meta property="og:description" content="HomebrewHomebrew란 간단히 말해서 Mac용 패키지 관리자이다. 리눅스에서 데비안, 우분투는 apt-get-install로 패키지를 알아서 설치하고 CentOS 는 yum으로 설치하는데 Mac도 Homebrew라는 패키지관리자를 통해서 패키지를 쉽게 설치할수 있다. (brew를 통해 설치하면 패키지의 의존하는 패키지들도 알아서 설치해준다.) 개발">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://sskim91.github.io/images/thumbnail/homebrew.jpeg">
+<meta property="og:updated_time" content="2018-05-11T06:50:40.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Homebrew 정리">
+<meta name="twitter:description" content="HomebrewHomebrew란 간단히 말해서 Mac용 패키지 관리자이다. 리눅스에서 데비안, 우분투는 apt-get-install로 패키지를 알아서 설치하고 CentOS 는 yum으로 설치하는데 Mac도 Homebrew라는 패키지관리자를 통해서 패키지를 쉽게 설치할수 있다. (brew를 통해 설치하면 패키지의 의존하는 패키지들도 알아서 설치해준다.) 개발">
+<meta name="twitter:image" content="https://sskim91.github.io/images/thumbnail/homebrew.jpeg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">아마그래머</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Programmers/">Programmers</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/JavaScript/">JavaScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/HTML/">HTML</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/라즈베리파이/">라즈베리파이</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/">정리</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/IDE/">IDE</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/JS-Library/">JS Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/Java-Library/">Java Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQuery/">jQuery</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQueryUI/">jQueryUI</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                
+                
+                <section id="main">
+                    <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/정리/">정리</a>
+    </h1>
+</div>
+                    <div class="main-body-content">
+                        <article id="post-Web-Developer-20180511-Homebrew-정리" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Homebrew 정리
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/05/11/Web-Developer-20180511-Homebrew-정리/" class="article-date">
+            <time datetime="2018-05-11T06:42:06.000Z" itemprop="datePublished">2018-05-11</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Homebrew/">Homebrew</a>, <a class="tag-link" href="/tags/Homebrew-Cask/">Homebrew Cask</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h3><p>Homebrew란 간단히 말해서 Mac용 패키지 관리자이다. 리눅스에서 데비안, 우분투는 apt-get-install로 패키지를 알아서 설치하고 CentOS 는 yum으로 설치하는데 Mac도 Homebrew라는 패키지관리자를 통해서 패키지를 쉽게 설치할수 있다. (brew를 통해 설치하면 패키지의 의존하는 패키지들도 알아서 설치해준다.) 개발하다가 또는 웹사이트를 탐험하다가 소프트웨어 및 사용하는 툴의 플러그인 들을 설치하는 방법들을 보면 Homebrew로 설치하라고 하는 README를 많이 볼 수 있다. 그런점을 봐도 Mac을 사용한다면 처음에 해야할 일은 아마도 Homebrew를 설치하는 일이 아닌가 싶다. Homebrew를 통해서 단순히 패키지만을 설치할 수 있을뿐만 아니라 구글 Chrome 이나 Java JDK 등 cask 명령어를 통해 응용 프로그램을 쉽게 설치할 수 있다.</p>
+<p>그럼 일단 Homebrew를 설치해보자. </p>
+<p>지금의 설명은 전부 다 Homebrew의 홈페이지에 자세히 나와있다. <a href="https://brew.sh/index_ko" target="_blank" rel="noopener">Hombrew 사이트</a>  친절하게 한글로도 번역이되어있다.</p>
+<p>Hombrew를 설치하는 방법은 간단히 Mac의 터미널을 실행시키고 아래의 명령어만 입력하면된다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+<p>Homebrew를 설치를 완료하면 이제 brew 명령어를 통해서 패키지를 설치할 수 있다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install [패키지명]</span><br></pre></td></tr></table></figure>
+<p><strong>brew는 똑같은 패키지라도 버전별로 다르게 다운로드 할 수 있다.</strong></p>
+<p>Homebrew는 전용 디렉터리에 패키지를 설치하고 환경설정 및 binary 파일을 심볼릭 링크로 연결시켜준다.</p>
+<p>전용 디렉터리의 위치는 <code>/usr/local/Cellar</code> 에 있다. Cellar 밑으로 들어가보면 brew로 설치한 패키지 목록들이 나타낸다. </p>
+<p><img src="/images/brew_cellar.png" alt=""></p>
+<p>직접 경로로 들어가보지 않고 brew로 설치한 패키지 목록을 나타내는 명령어는 아래와 같다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew list</span><br></pre></td></tr></table></figure>
+<h3 id="brew-명령어"><a href="#brew-명령어" class="headerlink" title="brew 명령어"></a>brew 명령어</h3><p><a href="https://github.com/sakra/homebrew/wiki/The-brew-command" target="_blank" rel="noopener">brew command 퍼옴..</a></p>
+<p>brew에서 설치할 수 있는 패키지들을 formula 라고 한다.</p>
+<p>자주쓰이는 명령어는</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">brew list	//현재 설치되어있는 패키지 목록</span><br><span class="line">brew search [formular]	//패키지 검색</span><br><span class="line">brew remove [formula] //패키지 삭제 (uninstall도 가능)</span><br><span class="line">brew doctor	// brew 사용시 오류를 체크</span><br><span class="line">brew info [formula]	//패키지 정보</span><br><span class="line">brew upgrade [formual]	// 패키지를 안써주면 현재 설치되어있는 패키지 전부 업그레이드 패키지							  를 명시해주면 명시된 패키지만 업데이트</span><br><span class="line">brew update	// Homebrew 업데이트</span><br><span class="line">brew cleanup	//패키지의 모든 과거버전을 제거</span><br></pre></td></tr></table></figure>
+<p>아래 표는 참고로..</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>brew install foo</code></td>
+<td>Installs foo</td>
+</tr>
+<tr>
+<td><code>brew install --HEAD foo</code></td>
+<td>Installs the HEAD version of foo, if foo defines such a version.</td>
+</tr>
+<tr>
+<td><code>brew install --force --HEAD foo</code></td>
+<td>Installs a newer HEAD version of foo.</td>
+</tr>
+<tr>
+<td><code>brew search</code></td>
+<td>Lists all formula that you can install</td>
+</tr>
+<tr>
+<td><code>brew search foo</code></td>
+<td>Searches for foo in formula available to install</td>
+</tr>
+<tr>
+<td><code>brew search /foo/</code></td>
+<td>Same as above but parses /foo/ as a regex</td>
+</tr>
+<tr>
+<td><code>brew list</code></td>
+<td>Lists all installed formulae</td>
+</tr>
+<tr>
+<td><code>brew list foo</code></td>
+<td>Lists the installed files for foo</td>
+</tr>
+<tr>
+<td><code>brew info --github foo</code></td>
+<td>Open your browser at the Github History page for formula foo</td>
+</tr>
+<tr>
+<td><code>brew info</code></td>
+<td>Summarises all installed Homebrew packages</td>
+</tr>
+<tr>
+<td><code>brew info foo</code></td>
+<td>Gives all available information for installed or not installed formula foo</td>
+</tr>
+<tr>
+<td><code>brew home</code></td>
+<td>Open’s Homebrew’s homepage in your default browser</td>
+</tr>
+<tr>
+<td><code>brew home foo</code></td>
+<td>Opens foo’s homepage in your default browser</td>
+</tr>
+<tr>
+<td><code>brew update</code></td>
+<td>Update homebrew formulae and homebrew itself</td>
+</tr>
+<tr>
+<td><code>brew remove foo</code></td>
+<td>Uninstalls foo</td>
+</tr>
+<tr>
+<td><code>brew create [url]</code></td>
+<td>Generates a formula for the downloadable file at url and opens it in TextMate <a href="https://github.com/sakra/homebrew/wiki/The-brew-command#fn1" target="_blank" rel="noopener">1</a></td>
+</tr>
+<tr>
+<td><code>brew create url-of-tarball --cache</code></td>
+<td>Generates a formula, then downloads the tarball. Adds the md5 to the formula template for you</td>
+</tr>
+<tr>
+<td><code>brew create --macports foo</code></td>
+<td>Open your browser at the MacPorts package search page, so you can see how they do foo</td>
+</tr>
+<tr>
+<td><code>brew create --fink foo</code></td>
+<td>Same thing, but for Fink</td>
+</tr>
+<tr>
+<td><code>brew edit foo</code></td>
+<td>Opens the formula in TextMate</td>
+</tr>
+<tr>
+<td><code>brew link foo</code></td>
+<td>Symlinks all of foo’s installed files into the Homebrew prefix <a href="https://github.com/sakra/homebrew/wiki/The-brew-command#fn2" target="_blank" rel="noopener">2</a></td>
+</tr>
+<tr>
+<td><code>brew unlink foo</code></td>
+<td>Unsymlinks foo from the Homebrew prefix</td>
+</tr>
+<tr>
+<td><code>brew prune</code></td>
+<td>Removes dead symlinks from the Homebrew prefix <a href="https://github.com/sakra/homebrew/wiki/The-brew-command#fn3" target="_blank" rel="noopener">3</a></td>
+</tr>
+<tr>
+<td><code>brew outdated</code></td>
+<td>Shows formula that have an updated version available . To install the new version of foo: <code>brew install foo</code></td>
+</tr>
+<tr>
+<td><code>brew --config</code></td>
+<td>Print some useful system configuration to the console</td>
+</tr>
+<tr>
+<td><code>brew --prefix</code></td>
+<td>Display the real path to your Homebrew prefix (Usually /usr/local)</td>
+</tr>
+<tr>
+<td><code>brew --prefix (formula)</code></td>
+<td>Display the path where this formula is installed</td>
+</tr>
+<tr>
+<td><code>brew --cellar</code></td>
+<td>Display the real path to your Homebrew Cellar (Usually /usr/local/Cellar)</td>
+</tr>
+<tr>
+<td><code>brew --cache</code></td>
+<td>Display the real path to where Homebrew caches downloads (Usually ~/Library/Caches/Homebrew)</td>
+</tr>
+<tr>
+<td><code>brew doctor</code></td>
+<td>Checks your installation for common issues</td>
+</tr>
+<tr>
+<td><code>brew audit</code></td>
+<td>Audits all formulae for common code and style issues</td>
+</tr>
+<tr>
+<td><code>brew cleanup foo</code></td>
+<td>For all installed or specific formulae, removes any older versions from the cellar <a href="https://github.com/sakra/homebrew/wiki/The-brew-command#fn4" target="_blank" rel="noopener">4</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Homebrew-Cask"><a href="#Homebrew-Cask" class="headerlink" title="Homebrew Cask"></a>Homebrew Cask</h3><p>Homebrew Cask는 Homebrew의 확장 프로그램(?) 쯤으로 생각하면 되고 MacOS 응용 프로그램과 대형 바이너리 파일들을 우아하고(?) 단순하게 그리고 빠르게 받을 수 있게 해준다고 공식 홈페이지에 나와있다.</p>
+<p><a href="https://caskroom.github.io/" target="_blank" rel="noopener">Homebrew Cask</a></p>
+<p>당연한 이야기지만 Cask를 사용하기 위해서는 먼저 Homebrew를 설치해야 한다.</p>
+<p>brew cask 명령어를 사용하기 전에 아래의 명령어를 일단 실행해야한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap caskroom/cask</span><br></pre></td></tr></table></figure>
+<p>우리가 보통 응용 프로그램을 다운로드 받을 때 받고싶은 응용 프로그램을 인터넷에 검색해서 공식 사이트에 들어가서 다운로드 받아서 설치까지 진행해야하는 번거로움(?)이 있지만 Homebrew Cask 를 사용하면 터미널을 키고 그냥 아래의 명령어만 쳐주면 된다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install google-chrome</span><br></pre></td></tr></table></figure>
+<p>cask로 설치한 응용프로그램의 위치는 <code>/usr/local/Caskroom</code> 에 있다.</p>
+<p><img src="/images/brew_cask.gif" alt=""></p>
+<h3 id="Cask-명령어"><a href="#Cask-명령어" class="headerlink" title="Cask 명령어"></a>Cask 명령어</h3><p>cask 명령어는 기존 brew 명령어와 다를게 없다. 단지 앞에 <code>cask</code> 만 하나 더 들어가있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew cask search &lt;program&gt;	//응용 프로그램 검색</span><br><span class="line">brew cask install &lt;program&gt; //응용 프로그램 설치</span><br><span class="line">brew cask uninstall &lt;program&gt; //응용 프로그램 제거</span><br></pre></td></tr></table></figure>
+<p>나는 현재 java를 버전별로 cask 명령어를 통해 설치해 놓았다.</p>
+<h3 id="마무리"><a href="#마무리" class="headerlink" title="마무리"></a>마무리</h3><p>살펴보니 Mac을 사용하면서 이렇게 편한 Homebrew를  사용하지 않을 이유가 없다. 만들어주신 개발자느님 감사합니다.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sskim91.github.io/2018/05/11/Web-Developer-20180511-Homebrew-정리/" data-id="cjh1lrds1000021wial1zqwb5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 sskim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'sskim91';
+    
+    
+    var disqus_url = 'https://sskim91.github.io/2018/05/11/Web-Developer-20180511-Homebrew-정리/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

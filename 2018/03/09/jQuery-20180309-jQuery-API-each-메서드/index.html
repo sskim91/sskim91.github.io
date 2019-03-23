@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
+
+    
+
     
     <title>jQuery API 살펴보기 each() 메서드 | Amagrammer</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="jQuery" />
+        <meta name="keywords" content="jQuery">
     
     <meta name="description" content=".each() 메서드는 DOM 문서 객체의 선택된 요소를 지정한 수 만큼 반복시켜주는 메서드이다.">
 <meta name="keywords" content="jQuery">
@@ -18,7 +21,7 @@
 <meta property="og:description" content=".each() 메서드는 DOM 문서 객체의 선택된 요소를 지정한 수 만큼 반복시켜주는 메서드이다.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sskim91.github.io/images/thumbnail/jQuery.png">
-<meta property="og:updated_time" content="2018-05-10T01:22:15.995Z">
+<meta property="og:updated_time" content="2019-03-23T11:47:38.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery API 살펴보기 each() 메서드">
 <meta name="twitter:description" content=".each() 메서드는 DOM 문서 객체의 선택된 요소를 지정한 수 만큼 반복시켜주는 메서드이다.">
@@ -28,7 +31,7 @@
     
 
     
-        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="icon" href="/images/favicon.ico">
     
 
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
@@ -37,7 +40,7 @@
 
     <link rel="stylesheet" href="/css/style.css">
 
-    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
     
     
         <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
@@ -48,7 +51,7 @@
 
 
 </head>
-
+</html>
 <body>
     <div id="wrap">
         <header id="header">
@@ -70,13 +73,13 @@
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Programmers/">Programmers</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/JavaScript/">JavaScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/HTML/">HTML</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/라즈베리파이/">라즈베리파이</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/">정리</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/IDE/">IDE</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/JS-Library/">JS Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/Java-Library/">Java Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQuery/">jQuery</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQueryUI/">jQueryUI</a></li></ul></li></ul>
                                     
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
                                 </li>
                             
@@ -85,14 +88,14 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="Type something...">
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -137,8 +140,9 @@
     <a class="page-title-link" href="/categories/정리/">정리</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/정리/jQuery/">jQuery</a>
     </h1>
 </div>
+
                     <div class="main-body-content">
-                        <article id="post-jQuery-20180309-jQuery-API-each-메서드" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                        <article id="post-jQuery-20180309-jQuery-API-each-메서드" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -160,6 +164,8 @@
         </a>
     </div>
 
+		
+
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
@@ -176,14 +182,6 @@
 <p>음..즉 그냥 자바스크립트에서 for-each 같은 반복문인데 이 .each() 메서드는 HTML DOM 구조를 가지고 반복문을 돌린다.</p>
 <p>이때 callback 안에서 this라는 키워드를 사용할 수 있는데 이때 this는 호출된 선택자의 this값이다.</p>
 <p>또한 이 .each() 메서드는 jQuery.each() 메서드와는 또 다르다. 전자는 DOM 구조에 대한 반복을 실행할 수 있고 후자는 배열이나 XML 객체 등을 반복하는데 사용된다.</p>
-<blockquote>
-<h4 id="each-function"><a href="#each-function" class="headerlink" title=".each( function )"></a>.each( function )</h4><ul>
-<li><p><strong>function</strong></p>
-<p>Type: <a href="http://api.jquery.com/Types/#Function" target="_blank" rel="noopener">Function</a>( <a href="http://api.jquery.com/Types/#Integer" target="_blank" rel="noopener">Integer</a> index, <a href="http://api.jquery.com/Types/#Element" target="_blank" rel="noopener">Element</a> element )</p>
-<p>일치 하는 요소를 실행하는 함수</p>
-</li>
-</ul>
-</blockquote>
 <h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><p>간단한 예제를 보면서 확인해보자. 아래와 같은 html이 있다고 했을 때</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>foo<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>bar<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>li라는 선택자를 넣고 each() 메서드를 실행한다. 여기서 index는 0부터 시작한다. li가 있는 개수 만큼 반복된다.</p>
@@ -213,7 +211,7 @@
 
 
 
-    <a data-url="https://sskim91.github.io/2018/03/09/jQuery-20180309-jQuery-API-each-메서드/" data-id="cjh1lqmmi001n0twip9c96txo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://sskim91.github.io/2018/03/09/jQuery-20180309-jQuery-API-each-메서드/" data-id="cjtlfn9ph00195rwit873zfec" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -288,6 +286,7 @@
     </section>
 
 
+
                     </div>
                 </section>
                 
@@ -301,12 +300,19 @@
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2018 sskim</p>
+                <p>&copy; 2019 sskim</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
             </div>
         </div>
     </div>
 </footer>
+
         
     
     <script>

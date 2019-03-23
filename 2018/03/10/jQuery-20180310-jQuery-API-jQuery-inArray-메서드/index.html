@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
+
+    
+
     
     <title>jQuery API 살펴보기 jQuery inArray 메서드 | Amagrammer</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="jQuery,inArray" />
+        <meta name="keywords" content="jQuery,inArray">
     
     <meta name="description" content="배열 내에 지정된 값을 찾아서 인덱스를 반환한다. (찾지 못했을 경우 -1을 반환한다.)">
 <meta name="keywords" content="jQuery,inArray">
@@ -18,7 +21,7 @@
 <meta property="og:description" content="배열 내에 지정된 값을 찾아서 인덱스를 반환한다. (찾지 못했을 경우 -1을 반환한다.)">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sskim91.github.io/images/thumbnail/jQuery.png">
-<meta property="og:updated_time" content="2018-05-10T01:22:15.995Z">
+<meta property="og:updated_time" content="2019-03-23T11:42:10.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery API 살펴보기 jQuery inArray 메서드">
 <meta name="twitter:description" content="배열 내에 지정된 값을 찾아서 인덱스를 반환한다. (찾지 못했을 경우 -1을 반환한다.)">
@@ -28,7 +31,7 @@
     
 
     
-        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="icon" href="/images/favicon.ico">
     
 
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
@@ -37,7 +40,7 @@
 
     <link rel="stylesheet" href="/css/style.css">
 
-    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
     
     
         <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
@@ -48,7 +51,7 @@
 
 
 </head>
-
+</html>
 <body>
     <div id="wrap">
         <header id="header">
@@ -70,13 +73,13 @@
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Programmers/">Programmers</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/JavaScript/">JavaScript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/">Web</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web/HTML/">HTML</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/라즈베리파이/">라즈베리파이</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/">정리</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/IDE/">IDE</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/JS-Library/">JS Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/Java-Library/">Java Library</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQuery/">jQuery</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/정리/jQueryUI/">jQueryUI</a></li></ul></li></ul>
                                     
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
                                 </li>
                             
@@ -85,14 +88,14 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="Type something...">
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -137,8 +140,9 @@
     <a class="page-title-link" href="/categories/정리/">정리</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/정리/jQuery/">jQuery</a>
     </h1>
 </div>
+
                     <div class="main-body-content">
-                        <article id="post-jQuery-20180310-jQuery-API-jQuery-inArray-메서드" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                        <article id="post-jQuery-20180310-jQuery-API-jQuery-inArray-메서드" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -160,6 +164,8 @@
         </a>
     </div>
 
+		
+
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
@@ -175,22 +181,6 @@
 <p>이 $.inArray() 메서드는 자바스크립트의 .indexOf() 메서드와 유사하다.</p>
 <p>지정된 값을 찾지못하면 -1을 반환한다 그리고 배열의 첫번째 요소가 지정한 값과 일치 할 경우 0을 반환한다.</p>
 <p>그냥 자바스크립트의 indexOf() 과 같다고 생각하면 될 것 같다.</p>
-<blockquote>
-<h4 id="jQuery-inArray-value-array-fromIndex"><a href="#jQuery-inArray-value-array-fromIndex" class="headerlink" title="jQuery.inArray( value, array [,fromIndex] )"></a>jQuery.inArray( value, array [,fromIndex] )</h4><ul>
-<li><p><strong>value</strong></p>
-<p>Type: <a href="http://api.jquery.com/Types/#Anything" target="_blank" rel="noopener">Anything</a></p>
-<p>검색할 값</p>
-</li>
-<li><p><strong>array</strong></p>
-<p>Type: <a href="http://api.jquery.com/Types/#Array" target="_blank" rel="noopener">Array</a></p>
-<p>검색 할 배열</p>
-</li>
-<li><p><strong>fromIndex</strong></p>
-<p>Type: <a href="http://api.jquery.com/Types/#Number" target="_blank" rel="noopener">Number</a></p>
-<p>The index of the array at which to begin the search. The default is 0, which will search the whole array.​</p>
-</li>
-</ul>
-</blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.inArray( <span class="number">5</span> + <span class="number">5</span>, [ <span class="string">"8"</span>, <span class="string">"9"</span>, <span class="string">"10"</span>, <span class="number">10</span> + <span class="string">""</span> ] );</span><br></pre></td></tr></table></figure>
 <p>위의 식에서는 -1을 리턴한다. 이 문자열 배열에서는 숫자를 검색하는데 숫자가 없기 때문에 -1을 반환한다.</p>
 <h3 id="사용법"><a href="#사용법" class="headerlink" title="사용법"></a>사용법</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.inArray(value, array[,fromIndex]);</span><br></pre></td></tr></table></figure>
@@ -206,7 +196,7 @@
 
 
 
-    <a data-url="https://sskim91.github.io/2018/03/10/jQuery-20180310-jQuery-API-jQuery-inArray-메서드/" data-id="cjh1lqmmj001q0twi3s5l8dx2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://sskim91.github.io/2018/03/10/jQuery-20180310-jQuery-API-jQuery-inArray-메서드/" data-id="cjtlfn9pm001l5rwiylrvif3c" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -281,6 +271,7 @@
     </section>
 
 
+
                     </div>
                 </section>
                 
@@ -294,12 +285,19 @@
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2018 sskim</p>
+                <p>&copy; 2019 sskim</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
             </div>
         </div>
     </div>
 </footer>
+
         
     
     <script>

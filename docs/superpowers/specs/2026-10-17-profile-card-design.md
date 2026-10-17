@@ -6,9 +6,9 @@
 
 ## 확정 콘텐츠
 
-- 이름: SEONG SEOB KIM
+- 이름: SEONGSEOB KIM (화면에서는 SEONGSEOB / KIM. 두 줄)
 - 핸들: sskim91
-- 소개: 서비스를 만들고, 배포하고, 운영하는 개발자입니다.
+- 소개: 안녕하세요, 개발자 김성섭입니다.
 - 분야: Backend · Infrastructure · AI Applications
 - GitHub: https://github.com/sskim91
 - Tistory: https://amagrammer91.tistory.com/
@@ -24,7 +24,7 @@
 
 ## 구현 구조와 선택 근거
 
-현재 master에는 Hexo 3.8.0 산출물이 있으며 index.html이 공용 css/style.css와 libs를 참조한다. 기존 글은 2018/, archives/, categories/, tags/, page/ 아래에 존재한다. 로컬 checkout 기준 저장소별 AGENTS.md와 배포 workflow는 없다. GitHub Pages의 원격 설정은 아직 확인하지 않았다.
+현재 master에는 Hexo 3.8.0 산출물이 있으며 index.html이 공용 css/style.css와 libs를 참조한다. 기존 글은 2018/, archives/, categories/, tags/, page/ 아래에 존재한다. 로컬 checkout 기준 저장소별 AGENTS.md와 배포 workflow는 없다. GitHub Pages는 master 브랜치 루트를 배포하며 HTTPS를 강제한다. 원격 API로 확인했다.
 
 기존 메인 index.html을 의미 있는 HTML 구조로 교체하고 css/profile.css를 추가한다. 기존 공용 스타일은 변경하지 않아 과거 글에 영향이 없도록 한다. JavaScript, 프레임워크, 빌드 의존성 없이 기본 링크로 동작한다. 기존 Hexo 테마를 개조하는 방식보다 변경 범위가 작고, 새 프레임워크 도입보다 관리 부담이 적다.
 
@@ -36,4 +36,16 @@
 
 구현 후 로컬 HTTP 서버에서 375px 모바일과 1440px 데스크톱 화면을 확인한다. 이름과 소개의 줄바꿈, 링크 터치 영역, 키보드 탐색, 확대 시 잘림을 점검한다. 세 개 외부 링크의 href, canonical, 메타 정보를 검증한다. archives와 대표 기존 글이 열리고 필요한 자산이 로드되는지 확인한다. Git diff로 과거 글과 공용 자산의 미변경을 검증한다.
 
-현재 단계는 로컬 설계 문서 작성이다. 구현과 로컬 검증은 문서·계획 검토 후 진행하며 원격 push와 공개 배포는 별도로 확인한다. 외부 메일 프로그램의 설정 및 실제 메일 송신은 검증 범위가 아니다.
+설계·구현·디자인 수정 후 사용자가 커밋·push 및 공개 배포 진행을 승인했다. 외부 메일 프로그램의 설정 및 실제 메일 송신은 검증 범위가 아니다.
+
+
+## 후속 디자인 수정 — 실물 명함형
+
+첫 구현이 너무 단순하다는 사용자 피드백에 따라 실물 명함형 제안을 선택받았다. 위 최초 화면 설계 중 560px 텍스트 중심 배치를 다음 내용으로 대체한다. 기능·연락처·기존 글 보존은 유지한다.
+
+- 전체 폭 최대 900px, 종이 질감과 얇은 테두리·부드러운 그림자를 가진 가로 명함.
+- 왼쪽에 이름·소개·분야, 오른쪽 딥그린 색면에 얇은 궤도 도형. 사용자 요청으로 중앙 ssk 모노그램과 화살표는 제거.
+- GitHub·Tistory·Email은 아이콘과 짧은 설명이 있는 링크 카드로 표현.
+- 700px 이하에서는 명함과 링크를 세로로 배치하며 그래픽 영역은 낮게 유지.
+- hover에서 링크 카드를 살짝 올리되 prefers-reduced-motion에서는 움직임 제거.
+- 모든 그래픽은 인라인 SVG와 CSS로 표현하며 외부 서비스·라이브러리 추가 없음.

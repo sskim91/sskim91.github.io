@@ -38,10 +38,25 @@
 
 **Interfaces:** 입력은 설계의 확정 문구와 네 링크다. 결과는 `/`에서 제공되는 HTML과 `/css/profile.css`이며 기존 `/archives/`와 글 URL을 그대로 이용한다.
 
-- [ ] **Step 1: 작업 격리와 기준 상태 확보.** using-git-worktrees 스킬에 따라 현재 설계 커밋을 포함하는 격리 작업 공간을 만든다. 기준 SHA와 git status를 기록하고 기존 archives 및 대표 글 URL을 선정한다. 이 계획 문서도 실행 작업 공간에 포함한다.
-- [ ] **Step 2: index.html 교체.** lang=ko, viewport(확대 제한 없음), main, h1, 소개, nav, footer로 구성한다. 링크 텍스트는 GitHub, Tistory, Email, 이전 기록으로 하고 새 창을 강제하지 않는다. 제목은 “SEONG SEOB KIM | Developer”, description은 확정 소개, canonical 및 og:url은 https://sskim91.github.io/, og:title과 og:description은 제목·소개와 일치시킨다. 명함은 css/profile.css만 로드하고 기존 favicon은 유지한다.
-- [ ] **Step 3: css/profile.css 작성.** 설계 색상과 폭을 적용하고 clamp 기반 이름 크기, 자연 줄바꿈, 유연한 링크 배치, 최소 터치 영역, 명확한 focus-visible을 구현한다. 본문은 최소 높이로 중앙 배치하며 콘텐츠가 커지면 정상 스크롤한다.
-- [ ] **Step 4: HTTP 및 링크 검증.** `python3 -m http.server 8000 --bind 127.0.0.1`로 제공한다. `/`, `/css/profile.css`, `/archives/`, 선정한 기존 글과 그 로컬 자산이 200인지 확인한다. 브라우저 DOM에서 네 href 및 메타 값을 위 값과 대조한다. 이메일은 mailto 목적지만 확인하고 메일 발송은 하지 않는다.
-- [ ] **Step 5: 시각·접근성 확인.** 375×812와 1440×900 스크린샷을 확인한다. 추가로 320px 폭, 200% 확대, 키보드 Tab/Enter, JavaScript 비활성 조건에서 Review Focus 항목을 점검한다. 가로 넘침, 잘림, 링크 겹침이 없고 본문 대비가 WCAG AA 4.5:1 이상인지 확인한다. 사용 가능한 도구가 일부 검증을 지원하지 않으면 미검증 범위를 명시한다.
-- [ ] **Step 6: 보존 및 변경 검사.** `git diff --check`가 통과하고 `git diff --name-only <기준SHA>`에 과거 글·공용 자산 변경이 없는지 확인한다. 미추적 파일까지 포함해 허용 파일과 설계·계획 문서만 변경되었는지 확인한다.
-- [ ] **Step 7: 리뷰와 로컬 완료 보고.** 실행 방식에 맞춰 리뷰하고 발견된 문제만 수정·재검증한다. 구현 결과, 로컬 미리보기, 검증 결과를 제시한다. 로컬 커밋 시 명시적으로 index.html, css/profile.css 및 합의한 문서만 stage하고 메시지는 `feat(profile): 미니멀 개발자 명함 페이지 추가`로 한다. 원격 배포는 수행하지 않는다.
+- [x] **Step 1: 작업 격리와 기준 상태 확보.** using-git-worktrees 스킬에 따라 현재 설계 커밋을 포함하는 격리 작업 공간을 만든다. 기준 SHA와 git status를 기록하고 기존 archives 및 대표 글 URL을 선정한다. 이 계획 문서도 실행 작업 공간에 포함한다.
+- [x] **Step 2: index.html 교체.** lang=ko, viewport(확대 제한 없음), main, h1, 소개, nav, footer로 구성한다. 링크 텍스트는 GitHub, Tistory, Email, 이전 기록으로 하고 새 창을 강제하지 않는다. 제목은 “SEONG SEOB KIM | Developer”, description은 확정 소개, canonical 및 og:url은 https://sskim91.github.io/, og:title과 og:description은 제목·소개와 일치시킨다. 명함은 css/profile.css만 로드하고 기존 favicon은 유지한다.
+- [x] **Step 3: css/profile.css 작성.** 설계 색상과 폭을 적용하고 clamp 기반 이름 크기, 자연 줄바꿈, 유연한 링크 배치, 최소 터치 영역, 명확한 focus-visible을 구현한다. 본문은 최소 높이로 중앙 배치하며 콘텐츠가 커지면 정상 스크롤한다.
+- [x] **Step 4: HTTP 및 링크 검증.** `python3 -m http.server 8000 --bind 127.0.0.1`로 제공한다. `/`, `/css/profile.css`, `/archives/`, 선정한 기존 글과 그 로컬 자산이 200인지 확인한다. 브라우저 DOM에서 네 href 및 메타 값을 위 값과 대조한다. 이메일은 mailto 목적지만 확인하고 메일 발송은 하지 않는다.
+- [x] **Step 5: 시각·접근성 확인.** 375×812와 1440×900 스크린샷을 확인한다. 추가로 320px 폭, 200% 확대, 키보드 Tab/Enter, JavaScript 비활성 조건에서 Review Focus 항목을 점검한다. 가로 넘침, 잘림, 링크 겹침이 없고 본문 대비가 WCAG AA 4.5:1 이상인지 확인한다. 사용 가능한 도구가 일부 검증을 지원하지 않으면 미검증 범위를 명시한다.
+- [x] **Step 6: 보존 및 변경 검사.** `git diff --check`가 통과하고 `git diff --name-only <기준SHA>`에 과거 글·공용 자산 변경이 없는지 확인한다. 미추적 파일까지 포함해 허용 파일과 설계·계획 문서만 변경되었는지 확인한다.
+- [x] **Step 7: 리뷰와 로컬 완료 보고.** 실행 방식에 맞춰 리뷰하고 발견된 문제만 수정·재검증한다. 구현 결과, 로컬 미리보기, 검증 결과를 제시한다. 로컬 커밋 시 명시적으로 index.html, css/profile.css 및 합의한 문서만 stage하고 메시지는 `feat(profile): 미니멀 개발자 명함 페이지 추가`로 한다. 원격 배포는 수행하지 않는다.
+
+
+## 실행 결과
+
+- 구현 커밋: 72cd9a3, 브랜치 feat/profile-card.
+- 변경: index.html, css/profile.css. 기존 글과 공용 자산 diff 없음.
+- 320/375/1440px 가로 넘침 없음, 링크 높이 모두 44px. 375×812 / 1440×900 스크린샷 육안 확인.
+- 키보드 네 링크 포커스 및 Enter로 archive 이동 확인. JavaScript 비활성에서도 소개·링크·archive 이동 확인.
+- 메인·CSS·archive·대표 한글 글 및 관련 로컬 자산 19개 HTTP 200 확인.
+- 텍스트 대비 13.69 / 5.38 / 7.87, 메타 정보와 링크 주소 일치, git diff --check 통과.
+- 독립 리뷰: Critical / Important / Minor 모두 없음. 리뷰어는 코드·모바일 이미지를 확인했으며 상호작용·HTTP 결과는 구현자의 기록을 참고함.
+- 한계: 확대는 CSS zoom=2로 확인했으며 실제 브라우저 UI 확대와 실기기, 메일 발송 및 공개 배포는 미검증.
+- 실행 판단: 네이티브 worktree 도구는 dotfiles에 연결되어 대상 저장소 인자를 받지 않으므로 수동 Git worktree를 사용함. 영향은 작업 공간 등록 방식에 한정됨.
+- 검증 판단: 상위 지침과 승인된 계획에 따라 정적 UI를 반복하는 테스트 파일 대신 브라우저·HTTP 검증을 사용함. 지속적인 자동 회귀 테스트는 추가되지 않음.
+- 리뷰 유보 범위 판단: 상호작용과 HTTP는 구현자가 직접 검증했으므로 중복 리뷰 실행을 요구하지 않음. 실제 브라우저 확대·실기기 호환성은 추가 확인 영역으로 남김.

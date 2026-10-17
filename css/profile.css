@@ -80,8 +80,6 @@ a { color: var(--accent); text-decoration: none; -webkit-tap-highlight-color: #2
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 @media (hover: hover) { .link-card:hover { transform: translateY(-3px); border-color: #9eaf9d; box-shadow: 0 8px 20px #20352c0d; } }
 .footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px 20px; margin-top: 20px; color: var(--muted); font-size: 10px; line-height: 1.8; }
-.archive { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; color: var(--muted); }
-.archive:hover { text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 700px) {
   body { padding: 32px 20px; }
   .business-card { grid-template-columns: minmax(0, 1fr); }
